@@ -1,0 +1,246 @@
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="n-19B4-7B65C-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>HomeworkLab4</text>
+  </name>
+ <page id="g-19B4-7B669-1">
+  <place id="p-19B4-7B66D-2">
+  <name>
+   <text>P1</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="30" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-19B4-7B680-3">
+  <name>
+   <text>P1Buffer</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="310" y="220"/>
+   </graphics>
+  </place>
+  <place id="p-19B4-7B684-4">
+  <name>
+   <text>P1Ready</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="30" y="220"/>
+   </graphics>
+  </place>
+  <place id="p-19B4-7B686-5">
+  <name>
+   <text>p0</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="840" y="390"/>
+   </graphics>
+  </place>
+  <place id="p-19B4-7B68A-6">
+  <name>
+   <text>p1</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="310" y="600"/>
+   </graphics>
+  </place>
+  <place id="p-19B4-7B68C-7">
+  <name>
+   <text>p2</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="30" y="600"/>
+   </graphics>
+  </place>
+  <place id="p-19B4-7B68F-8">
+  <name>
+   <text>p3</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>5</text>
+   </initialMarking>
+   <graphics>
+    <position x="170" y="465"/>
+   </graphics>
+  </place>
+  <place id="p-19B4-7B690-9">
+  <name>
+   <text>p4</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="30" y="405"/>
+   </graphics>
+  </place>
+  <place id="p-19B4-7B692-10">
+  <name>
+   <text>p8</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>3</text>
+   </initialMarking>
+   <graphics>
+    <position x="170" y="80"/>
+   </graphics>
+  </place>
+  <transition id="t-19B4-7B696-11">
+  <name>
+   <text>t0</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="30" y="120"/>
+   </graphics>
+  </transition>
+  <transition id="t-19B4-7B699-12">
+  <name>
+   <text>t1</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="535" y="220"/>
+   </graphics>
+  </transition>
+  <transition id="t-19B4-7B69C-13">
+  <name>
+   <text>t3</text>
+    <graphics>
+     <offset x="10" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="575" y="600"/>
+   </graphics>
+  </transition>
+  <transition id="t-19B4-7B69F-14">
+  <name>
+   <text>t5</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="30" y="500"/>
+   </graphics>
+  </transition>
+  <transition id="t-19B4-7B6A2-15">
+  <name>
+   <text>t6</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="170" y="220"/>
+   </graphics>
+  </transition>
+  <transition id="t-19B4-7B6A4-16">
+  <name>
+   <text>t7</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="170" y="600"/>
+   </graphics>
+  </transition>
+  <arc id="e-19B4-7B6A7-17" source="p-19B4-7B680-3" target="t-19B4-7B699-12">
+   <inscription>
+    <text>3</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+   </inscription>
+  </arc>
+  <arc id="e-19B4-7B6AE-18" source="t-19B4-7B699-12" target="p-19B4-7B692-10">
+   <inscription>
+    <text>3</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+   </inscription>
+  </arc>
+  <arc id="e-19B4-7B6B0-19" source="t-19B4-7B69C-13" target="p-19B4-7B686-5">
+  </arc>
+  <arc id="e-19B4-7B6B1-20" source="t-19B4-7B699-12" target="p-19B4-7B686-5">
+  </arc>
+  <arc id="e-19B4-7B706-21" source="p-19B4-7B66D-2" target="t-19B4-7B696-11">
+  </arc>
+  <arc id="e-19B4-7B708-22" source="t-19B4-7B696-11" target="p-19B4-7B684-4">
+  </arc>
+  <arc id="e-19B4-7B70B-23" source="t-19B4-7B6A2-15" target="p-19B4-7B680-3">
+  </arc>
+  <arc id="e-19B4-7B70C-24" source="p-19B4-7B692-10" target="t-19B4-7B6A2-15">
+  </arc>
+  <arc id="e-19B4-7B70D-25" source="p-19B4-7B684-4" target="t-19B4-7B6A2-15">
+  </arc>
+  <arc id="e-19B4-7B70E-26" source="t-19B4-7B6A2-15" target="p-19B4-7B684-4">
+  </arc>
+  <arc id="e-19B4-7B70F-27" source="t-19B4-7B69C-13" target="p-19B4-7B68F-8">
+   <inscription>
+    <text>5</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+   </inscription>
+  </arc>
+  <arc id="e-19B4-7B711-28" source="p-19B4-7B68A-6" target="t-19B4-7B69C-13">
+   <inscription>
+    <text>5</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+   </inscription>
+  </arc>
+  <arc id="e-19B4-7B714-29" source="t-19B4-7B6A4-16" target="p-19B4-7B68C-7">
+  </arc>
+  <arc id="e-19B4-7B714-30" source="p-19B4-7B68C-7" target="t-19B4-7B6A4-16">
+  </arc>
+  <arc id="e-19B4-7B715-31" source="p-19B4-7B68F-8" target="t-19B4-7B6A4-16">
+  </arc>
+  <arc id="e-19B4-7B716-32" source="t-19B4-7B6A4-16" target="p-19B4-7B68A-6">
+  </arc>
+  <arc id="e-19B4-7B717-33" source="t-19B4-7B69F-14" target="p-19B4-7B68C-7">
+  </arc>
+  <arc id="e-19B4-7B718-34" source="p-19B4-7B690-9" target="t-19B4-7B69F-14">
+  </arc>
+ </page>
+ </net>
+</pnml>

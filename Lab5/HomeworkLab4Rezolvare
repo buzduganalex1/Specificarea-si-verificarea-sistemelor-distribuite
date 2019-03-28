@@ -1,0 +1,13 @@
+net HomeworkLab4Rezolvare
+tr t1 {P1-Ready} p8 -> Buff1 {P1-Done} 
+tr t2 {P1-Done} -> {P1-Ready} 
+tr t3 {P2-Done} -> {P2-Ready} 
+tr t4 {P2-Ready} capacitate2 -> {P2-Done} buff2 
+tr t5 Buff1 {C-Ready} -> CDone p8 
+tr t6 CDone -> {C-Ready} 
+tr t7 {C-Ready} buff2 p8*3 -> CDone capacitate2*5 p8 
+pl {C-Ready} (1)
+pl {P1-Ready} (1)
+pl {P2-Ready} (1)
+pl capacitate2 (5)
+pl p8 (3)

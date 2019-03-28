@@ -1,0 +1,18 @@
+p 35.0 75.0 p2 0 n
+p 30.0 280.0 p1 0 n
+t 235.0 25.0 t2 0 w n
+t 235.0 130.0 t1 0 w n
+t 235.0 240.0 t3 0 w n
+p 430.0 75.0 p4 0 n
+p 445.0 295.0 p3 0 n
+e p2 t3 1 n
+e p2 t1 1 n
+e p3 t2 1 n
+e t1 p3 1 n
+e t3 p3 1 n
+e p1 t3 1 n
+e t2 p2 1 n
+e t2 p4 1 n
+h {Lab3-Exercise2File}
+
+

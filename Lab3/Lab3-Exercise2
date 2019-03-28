@@ -1,0 +1,102 @@
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="n-1468-49B29-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>Lab3-Exercise2</text>
+  </name>
+ <page id="g-1468-49B95-1">
+  <place id="p-1468-49BA3-2">
+  <name>
+   <text>p1</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="30" y="280"/>
+   </graphics>
+  </place>
+  <place id="p-1468-4A0AB-3">
+  <name>
+   <text>p2</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="35" y="75"/>
+   </graphics>
+  </place>
+  <place id="p-1468-4A0BE-4">
+  <name>
+   <text>p3</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="445" y="295"/>
+   </graphics>
+  </place>
+  <place id="p-1468-4A0C5-5">
+  <name>
+   <text>p4</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="430" y="75"/>
+   </graphics>
+  </place>
+  <transition id="t-1468-4A0CE-6">
+  <name>
+   <text>t1</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="235" y="130"/>
+   </graphics>
+  </transition>
+  <transition id="t-1468-4A0D8-7">
+  <name>
+   <text>t2</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="235" y="25"/>
+   </graphics>
+  </transition>
+  <transition id="t-1468-4A0DE-8">
+  <name>
+   <text>t3</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="235" y="240"/>
+   </graphics>
+  </transition>
+  <arc id="e-1468-4A0E8-9" source="p-1468-4A0AB-3" target="t-1468-4A0DE-8">
+  </arc>
+  <arc id="e-1468-4A0F2-10" source="p-1468-4A0AB-3" target="t-1468-4A0CE-6">
+  </arc>
+  <arc id="e-1468-4A0F5-11" source="p-1468-4A0BE-4" target="t-1468-4A0D8-7">
+  </arc>
+  <arc id="e-1468-4A0F8-12" source="t-1468-4A0CE-6" target="p-1468-4A0BE-4">
+  </arc>
+  <arc id="e-1468-4A0FA-13" source="t-1468-4A0DE-8" target="p-1468-4A0BE-4">
+  </arc>
+  <arc id="e-1468-4A100-14" source="p-1468-49BA3-2" target="t-1468-4A0DE-8">
+  </arc>
+  <arc id="e-1468-4A103-15" source="t-1468-4A0D8-7" target="p-1468-4A0AB-3">
+  </arc>
+  <arc id="e-1468-4A106-16" source="t-1468-4A0D8-7" target="p-1468-4A0C5-5">
+  </arc>
+ </page>
+ </net>
+</pnml>

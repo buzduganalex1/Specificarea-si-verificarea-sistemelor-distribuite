@@ -1,0 +1,243 @@
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="n-1C1C-3027-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>HomeworkLab4V2</text>
+  </name>
+ <page id="g-1C1C-305F-1">
+  <place id="p-1C1C-3063-2">
+  <name>
+   <text>p0</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="90" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-3082-3">
+  <name>
+   <text>p1</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="90" y="260"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-3084-4">
+  <name>
+   <text>p2</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="275" y="150"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-3087-5">
+  <name>
+   <text>p3</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>3</text>
+   </initialMarking>
+   <graphics>
+    <position x="225" y="265"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-3089-6">
+  <name>
+   <text>p4</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="580" y="150"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-308B-7">
+  <name>
+   <text>p5</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="85" y="585"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-309B-8">
+  <name>
+   <text>p6</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="85" y="375"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-309E-9">
+  <name>
+   <text>p7</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="270" y="475"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-309F-10">
+  <name>
+   <text>p8</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>5</text>
+   </initialMarking>
+   <graphics>
+    <position x="220" y="590"/>
+   </graphics>
+  </place>
+  <place id="p-1C1C-30A1-11">
+  <name>
+   <text>p9</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="435" y="295"/>
+   </graphics>
+  </place>
+  <transition id="t-1C1C-30A4-12">
+  <name>
+   <text>t0</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="145" y="150"/>
+   </graphics>
+  </transition>
+  <transition id="t-1C1C-30A7-13">
+  <name>
+   <text>t1</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="30" y="145"/>
+   </graphics>
+  </transition>
+  <transition id="t-1C1C-30AA-14">
+  <name>
+   <text>t2</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="435" y="150"/>
+   </graphics>
+  </transition>
+  <transition id="t-1C1C-30AB-15">
+  <name>
+   <text>t3</text>
+    <graphics>
+     <offset x="0" y="10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="140" y="475"/>
+   </graphics>
+  </transition>
+  <transition id="t-1C1C-30AE-16">
+  <name>
+   <text>t4</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="25" y="470"/>
+   </graphics>
+  </transition>
+  <transition id="t-1C1C-30AF-17">
+  <name>
+   <text>t5</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="430" y="475"/>
+   </graphics>
+  </transition>
+  <arc id="e-1C1C-30B1-18" source="t-1C1C-30AA-14" target="p-1C1C-30A1-11">
+  </arc>
+  <arc id="e-1C1C-30B6-19" source="t-1C1C-30AA-14" target="p-1C1C-3089-6">
+  </arc>
+  <arc id="e-1C1C-30B7-20" source="p-1C1C-3084-4" target="t-1C1C-30AA-14">
+   <inscription>
+    <text>3</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+   </inscription>
+  </arc>
+  <arc id="e-1C1C-30BA-21" source="p-1C1C-3087-5" target="t-1C1C-30A4-12">
+  </arc>
+  <arc id="e-1C1C-3173-22" source="t-1C1C-30A4-12" target="p-1C1C-3084-4">
+  </arc>
+  <arc id="e-1C1C-3174-23" source="t-1C1C-30A7-13" target="p-1C1C-3063-2">
+  </arc>
+  <arc id="e-1C1C-3175-24" source="p-1C1C-3082-3" target="t-1C1C-30A7-13">
+  </arc>
+  <arc id="e-1C1C-3185-25" source="t-1C1C-30A4-12" target="p-1C1C-3082-3">
+  </arc>
+  <arc id="e-1C1C-3186-26" source="p-1C1C-3063-2" target="t-1C1C-30A4-12">
+  </arc>
+  <arc id="e-1C1C-3187-27" source="p-1C1C-309B-8" target="t-1C1C-30AB-15">
+  </arc>
+  <arc id="e-1C1C-3187-28" source="t-1C1C-30AB-15" target="p-1C1C-308B-7">
+  </arc>
+  <arc id="e-1C1C-3188-29" source="p-1C1C-308B-7" target="t-1C1C-30AE-16">
+  </arc>
+  <arc id="e-1C1C-3189-30" source="t-1C1C-30AE-16" target="p-1C1C-309B-8">
+  </arc>
+  <arc id="e-1C1C-318A-31" source="t-1C1C-30AB-15" target="p-1C1C-309E-9">
+  </arc>
+  <arc id="e-1C1C-318B-32" source="p-1C1C-309F-10" target="t-1C1C-30AB-15">
+  </arc>
+  <arc id="e-1C1C-318C-33" source="p-1C1C-309E-9" target="t-1C1C-30AF-17">
+   <inscription>
+    <text>5</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+   </inscription>
+  </arc>
+  <arc id="e-1C1C-319C-34" source="t-1C1C-30AF-17" target="p-1C1C-3089-6">
+  </arc>
+ </page>
+ </net>
+</pnml>

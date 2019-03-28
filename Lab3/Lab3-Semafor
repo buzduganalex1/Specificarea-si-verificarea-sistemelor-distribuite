@@ -1,0 +1,204 @@
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="n-5BC-DA908-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>Lab3-Semafor</text>
+  </name>
+ <page id="g-5BC-DA929-1">
+  <place id="p-5BC-DA935-2">
+  <name>
+   <text>p0</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="50" y="60"/>
+   </graphics>
+  </place>
+  <place id="p-5BC-DA962-3">
+  <name>
+   <text>p1</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="135" y="200"/>
+   </graphics>
+  </place>
+  <place id="p-5BC-DA96B-4">
+  <name>
+   <text>p2</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="135" y="370"/>
+   </graphics>
+  </place>
+  <place id="p-5BC-DA974-5">
+  <name>
+   <text>p3</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="475" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-5BC-DA97B-6">
+  <name>
+   <text>p4</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="380" y="205"/>
+   </graphics>
+  </place>
+  <place id="p-5BC-DA984-7">
+  <name>
+   <text>p5</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="380" y="370"/>
+   </graphics>
+  </place>
+  <place id="p-5BC-DA988-8">
+  <name>
+   <text>p6</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="205" y="70"/>
+   </graphics>
+  </place>
+  <place id="p-5BC-DA992-9">
+  <name>
+   <text>p7</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="320" y="70"/>
+   </graphics>
+  </place>
+  <transition id="t-5BC-DA996-10">
+  <name>
+   <text>t0</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="135" y="125"/>
+   </graphics>
+  </transition>
+  <transition id="t-5BC-DA9A0-11">
+  <name>
+   <text>t1</text>
+    <graphics>
+     <offset x="10" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="135" y="290"/>
+   </graphics>
+  </transition>
+  <transition id="t-5BC-DA9AA-12">
+  <name>
+   <text>t2</text>
+    <graphics>
+     <offset x="-10" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="50" y="415"/>
+   </graphics>
+  </transition>
+  <transition id="t-5BC-DA9B0-13">
+  <name>
+   <text>t3</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="380" y="120"/>
+   </graphics>
+  </transition>
+  <transition id="t-5BC-DA9BA-14">
+  <name>
+   <text>t4</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="380" y="285"/>
+   </graphics>
+  </transition>
+  <transition id="t-5BC-DA9BF-15">
+  <name>
+   <text>t5</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="475" y="420"/>
+   </graphics>
+  </transition>
+  <arc id="e-5BC-DA9C9-16" source="t-5BC-DA9BF-15" target="p-5BC-DA988-8">
+  </arc>
+  <arc id="e-5BC-DA9D2-17" source="p-5BC-DA974-5" target="t-5BC-DA9B0-13">
+  </arc>
+  <arc id="e-5BC-DA9D6-18" source="t-5BC-DA9AA-12" target="p-5BC-DA935-2">
+  </arc>
+  <arc id="e-5BC-DA9D8-19" source="p-5BC-DA96B-4" target="t-5BC-DA9AA-12">
+  </arc>
+  <arc id="e-5BC-DA9DB-20" source="t-5BC-DA9A0-11" target="p-5BC-DA96B-4">
+  </arc>
+  <arc id="e-5BC-DA9DE-21" source="p-5BC-DA962-3" target="t-5BC-DA9A0-11">
+  </arc>
+  <arc id="e-5BC-DA9E0-22" source="t-5BC-DA996-10" target="p-5BC-DA962-3">
+  </arc>
+  <arc id="e-5BC-DA9E6-23" source="p-5BC-DA935-2" target="t-5BC-DA996-10">
+  </arc>
+  <arc id="e-5BC-DA9E9-24" source="t-5BC-DA9AA-12" target="p-5BC-DA992-9">
+  </arc>
+  <arc id="e-5BC-DA9EB-25" source="p-5BC-DA992-9" target="t-5BC-DA9B0-13">
+  </arc>
+  <arc id="e-5BC-DAAFE-26" source="p-5BC-DA988-8" target="t-5BC-DA996-10">
+  </arc>
+  <arc id="e-5BC-DAB02-27" source="t-5BC-DA9BF-15" target="p-5BC-DA974-5">
+  </arc>
+  <arc id="e-5BC-DAB05-28" source="p-5BC-DA984-7" target="t-5BC-DA9BF-15">
+  </arc>
+  <arc id="e-5BC-DAB07-29" source="t-5BC-DA9BA-14" target="p-5BC-DA984-7">
+  </arc>
+  <arc id="e-5BC-DAB0A-30" source="p-5BC-DA97B-6" target="t-5BC-DA9BA-14">
+  </arc>
+  <arc id="e-5BC-DAB11-31" source="t-5BC-DA9B0-13" target="p-5BC-DA97B-6">
+  </arc>
+ </page>
+ </net>
+</pnml>
