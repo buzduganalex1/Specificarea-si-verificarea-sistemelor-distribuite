@@ -1,0 +1,37 @@
+Struct version 3.4.4 -- 01/05/16 -- LAAS/CNRS
+
+parsed net Exercise1_1
+
+11 places, 7 transitions
+
+net Exercise1_1
+tr t0 P1Ready -> P1Wait buffer1 
+tr t1 P2Ready buffer1 -> P2 
+tr t3 P2 -> P2Wait buffer2 
+tr t4 P3Ready buffer2 -> P3Done 
+tr t5 P3Done -> P3ConfBuffer P3Ready 
+tr t7 P2Wait P3ConfBuffer -> P2ConfBuffer P2Ready 
+tr t8 P1Wait P2ConfBuffer -> P1Ready 
+pl P1Ready (1)
+pl P2Ready (1)
+pl P3Ready (1)
+
+0.000s
+
+P-SEMI-FLOWS GENERATING SET ------------------------------------- 
+
+invariant
+
+P1Ready P1Wait (1)
+P3Done P3Ready (1)
+P1Ready P2 P2ConfBuffer P3ConfBuffer P3Done buffer1 buffer2 (1)
+P2 P2Ready P3ConfBuffer P3Done buffer2 (1)
+P1Ready P2 P2ConfBuffer P2Wait buffer1 (1)
+P2 P2Ready P2Wait (1)
+
+0.000s
+
+ANALYSIS COMPLETED  --------------------------------------------- 
+
+
+

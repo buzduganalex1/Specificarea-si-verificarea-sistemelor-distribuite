@@ -1,10 +1,10 @@
 <pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
- <net id="n-1848-6CA11-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
+ <net id="n-118C-D4785-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
   <name>
    <text>Exercise1</text>
   </name>
- <page id="g-1848-6CA1F-1">
-  <place id="p-1848-6CA23-2">
+ <page id="g-118C-D4795-1">
+  <place id="p-118C-D4799-2">
   <name>
    <text>P1Ready</text>
     <graphics>
@@ -18,7 +18,7 @@
     <position x="35" y="50"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA39-3">
+  <place id="p-118C-D47AD-3">
   <name>
    <text>P1Wait</text>
     <graphics>
@@ -29,7 +29,7 @@
     <position x="145" y="175"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA3E-4">
+  <place id="p-118C-D47B2-4">
   <name>
    <text>P2</text>
     <graphics>
@@ -37,10 +37,10 @@
     </graphics>
   </name>
    <graphics>
-    <position x="545" y="50"/>
+    <position x="580" y="50"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA3F-5">
+  <place id="p-118C-D47B4-5">
   <name>
    <text>P2ConfBuffer</text>
     <graphics>
@@ -51,7 +51,7 @@
     <position x="315" y="320"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA44-6">
+  <place id="p-118C-D47B8-6">
   <name>
    <text>P2Ready</text>
     <graphics>
@@ -65,7 +65,7 @@
     <position x="445" y="185"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA48-7">
+  <place id="p-118C-D47BC-7">
   <name>
    <text>P2Wait</text>
     <graphics>
@@ -73,10 +73,10 @@
     </graphics>
   </name>
    <graphics>
-    <position x="710" y="190"/>
+    <position x="710" y="195"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA4A-8">
+  <place id="p-118C-D47C0-8">
   <name>
    <text>P3ConfBuffer</text>
     <graphics>
@@ -87,7 +87,7 @@
     <position x="1090" y="320"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA4E-9">
+  <place id="p-118C-D47C2-9">
   <name>
    <text>P3Done</text>
     <graphics>
@@ -98,7 +98,7 @@
     <position x="1090" y="50"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA52-10">
+  <place id="p-118C-D47C5-10">
   <name>
    <text>P3Ready</text>
     <graphics>
@@ -112,7 +112,7 @@
     <position x="970" y="195"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA54-11">
+  <place id="p-118C-D47C9-11">
   <name>
    <text>buffer1</text>
     <graphics>
@@ -120,10 +120,10 @@
     </graphics>
   </name>
    <graphics>
-    <position x="265" y="50"/>
+    <position x="280" y="50"/>
    </graphics>
   </place>
-  <place id="p-1848-6CA57-12">
+  <place id="p-118C-D47CB-12">
   <name>
    <text>buffer2</text>
     <graphics>
@@ -134,7 +134,7 @@
     <position x="845" y="50"/>
    </graphics>
   </place>
-  <transition id="t-1848-6CA5B-13">
+  <transition id="t-118C-D47CF-13">
   <name>
    <text>t0</text>
     <graphics>
@@ -145,7 +145,7 @@
     <position x="145" y="50"/>
    </graphics>
   </transition>
-  <transition id="t-1848-6CA5E-14">
+  <transition id="t-118C-D47D3-14">
   <name>
    <text>t1</text>
     <graphics>
@@ -156,7 +156,7 @@
     <position x="445" y="50"/>
    </graphics>
   </transition>
-  <transition id="t-1848-6CA61-15">
+  <transition id="t-118C-D47D5-15">
   <name>
    <text>t3</text>
     <graphics>
@@ -167,7 +167,7 @@
     <position x="710" y="50"/>
    </graphics>
   </transition>
-  <transition id="t-1848-6CA63-16">
+  <transition id="t-118C-D47D7-16">
   <name>
    <text>t4</text>
     <graphics>
@@ -178,7 +178,7 @@
     <position x="970" y="50"/>
    </graphics>
   </transition>
-  <transition id="t-1848-6CA66-17">
+  <transition id="t-118C-D47DB-17">
   <name>
    <text>t5</text>
     <graphics>
@@ -189,7 +189,7 @@
     <position x="1090" y="195"/>
    </graphics>
   </transition>
-  <transition id="t-1848-6CA68-18">
+  <transition id="t-118C-D47DC-18">
   <name>
    <text>t7</text>
     <graphics>
@@ -197,10 +197,10 @@
     </graphics>
   </name>
    <graphics>
-    <position x="535" y="320"/>
+    <position x="710" y="320"/>
    </graphics>
   </transition>
-  <transition id="t-1848-6CA6C-19">
+  <transition id="t-118C-D47E0-19">
   <name>
    <text>t8</text>
     <graphics>
@@ -211,49 +211,49 @@
     <position x="35" y="320"/>
    </graphics>
   </transition>
-  <arc id="e-1848-6CADA-20" source="t-1848-6CA66-17" target="p-1848-6CA52-10">
+  <arc id="e-118C-D4839-20" source="t-118C-D47DB-17" target="p-118C-D47C5-10">
   </arc>
-  <arc id="e-1848-6CAE2-21" source="p-1848-6CA3F-5" target="t-1848-6CA6C-19">
+  <arc id="e-118C-D483E-21" source="p-118C-D47B4-5" target="t-118C-D47E0-19">
   </arc>
-  <arc id="e-1848-6CAE3-22" source="t-1848-6CA68-18" target="p-1848-6CA3F-5">
+  <arc id="e-118C-D4841-22" source="t-118C-D47DC-18" target="p-118C-D47B4-5">
   </arc>
-  <arc id="e-1848-6CAE4-23" source="t-1848-6CA66-17" target="p-1848-6CA4A-8">
+  <arc id="e-118C-D4842-23" source="t-118C-D47DB-17" target="p-118C-D47C0-8">
   </arc>
-  <arc id="e-1848-6CAE6-24" source="p-1848-6CA57-12" target="t-1848-6CA63-16">
+  <arc id="e-118C-D4843-24" source="p-118C-D47CB-12" target="t-118C-D47D7-16">
   </arc>
-  <arc id="e-1848-6CAE8-25" source="t-1848-6CA61-15" target="p-1848-6CA48-7">
+  <arc id="e-118C-D4844-25" source="t-118C-D47D5-15" target="p-118C-D47BC-7">
   </arc>
-  <arc id="e-1848-6CAE9-26" source="t-1848-6CA61-15" target="p-1848-6CA57-12">
+  <arc id="e-118C-D4844-26" source="t-118C-D47D5-15" target="p-118C-D47CB-12">
   </arc>
-  <arc id="e-1848-6CAEA-27" source="p-1848-6CA3E-4" target="t-1848-6CA61-15">
+  <arc id="e-118C-D4845-27" source="p-118C-D47B2-4" target="t-118C-D47D5-15">
   </arc>
-  <arc id="e-1848-6CAEB-28" source="p-1848-6CA44-6" target="t-1848-6CA5E-14">
+  <arc id="e-118C-D4846-28" source="p-118C-D47B8-6" target="t-118C-D47D3-14">
   </arc>
-  <arc id="e-1848-6CAEC-29" source="t-1848-6CA5E-14" target="p-1848-6CA3E-4">
+  <arc id="e-118C-D4847-29" source="t-118C-D47D3-14" target="p-118C-D47B2-4">
   </arc>
-  <arc id="e-1848-6CAED-30" source="p-1848-6CA54-11" target="t-1848-6CA5E-14">
+  <arc id="e-118C-D484A-30" source="p-118C-D47C9-11" target="t-118C-D47D3-14">
   </arc>
-  <arc id="e-1848-6CAEE-31" source="p-1848-6CA4E-9" target="t-1848-6CA66-17">
+  <arc id="e-118C-D484B-31" source="p-118C-D47C2-9" target="t-118C-D47DB-17">
   </arc>
-  <arc id="e-1848-6CAF1-32" source="t-1848-6CA5B-13" target="p-1848-6CA39-3">
+  <arc id="e-118C-D484C-32" source="t-118C-D47CF-13" target="p-118C-D47AD-3">
   </arc>
-  <arc id="e-1848-6CAF2-33" source="t-1848-6CA5B-13" target="p-1848-6CA54-11">
+  <arc id="e-118C-D484C-33" source="t-118C-D47CF-13" target="p-118C-D47C9-11">
   </arc>
-  <arc id="e-1848-6CAF2-34" source="p-1848-6CA23-2" target="t-1848-6CA5B-13">
+  <arc id="e-118C-D484D-34" source="p-118C-D4799-2" target="t-118C-D47CF-13">
   </arc>
-  <arc id="e-1848-6CAF3-35" source="p-1848-6CA52-10" target="t-1848-6CA63-16">
+  <arc id="e-118C-D484E-35" source="p-118C-D47C5-10" target="t-118C-D47D7-16">
   </arc>
-  <arc id="e-1848-6CAF4-36" source="t-1848-6CA63-16" target="p-1848-6CA4E-9">
+  <arc id="e-118C-D484F-36" source="t-118C-D47D7-16" target="p-118C-D47C2-9">
   </arc>
-  <arc id="e-1848-6CAF5-37" source="p-1848-6CA4A-8" target="t-1848-6CA68-18">
+  <arc id="e-118C-D4851-37" source="p-118C-D47C0-8" target="t-118C-D47DC-18">
   </arc>
-  <arc id="e-1848-6CAF6-38" source="t-1848-6CA68-18" target="p-1848-6CA44-6">
+  <arc id="e-118C-D4852-38" source="t-118C-D47DC-18" target="p-118C-D47B8-6">
   </arc>
-  <arc id="e-1848-6CAF7-39" source="p-1848-6CA48-7" target="t-1848-6CA68-18">
+  <arc id="e-118C-D4853-39" source="p-118C-D47BC-7" target="t-118C-D47DC-18">
   </arc>
-  <arc id="e-1848-6CAF9-40" source="p-1848-6CA39-3" target="t-1848-6CA6C-19">
+  <arc id="e-118C-D4854-40" source="p-118C-D47AD-3" target="t-118C-D47E0-19">
   </arc>
-  <arc id="e-1848-6CAFA-41" source="t-1848-6CA6C-19" target="p-1848-6CA23-2">
+  <arc id="e-118C-D4854-41" source="t-118C-D47E0-19" target="p-118C-D4799-2">
   </arc>
  </page>
  </net>

@@ -1,0 +1,256 @@
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="n-2710-B7671-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>Exercise2</text>
+  </name>
+ <page id="g-2710-B7681-1">
+  <transition id="t-2710-B7685-2">
+  <name>
+   <text>Analiza rezultate</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="690" y="180"/>
+   </graphics>
+  </transition>
+  <transition id="t-2710-B769A-3">
+  <name>
+   <text>Aproba Dosar</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="870" y="340"/>
+   </graphics>
+  </transition>
+  <transition id="t-2710-B769F-4">
+  <name>
+   <text>Cerere Reevaluare</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="510" y="485"/>
+   </graphics>
+  </transition>
+  <place id="p-2710-B76A3-5">
+  <name>
+   <text>Dosar</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="30" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-2710-B76A6-6">
+  <name>
+   <text>Ev1</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="375" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-2710-B76AA-7">
+  <name>
+   <text>Ev2</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="365" y="345"/>
+   </graphics>
+  </place>
+  <place id="p-2710-B76AB-8">
+  <name>
+   <text>Ev3</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="690" y="340"/>
+   </graphics>
+  </place>
+  <transition id="t-2710-B76AF-9">
+  <name>
+   <text>IntocmireRaport</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="375" y="180"/>
+   </graphics>
+  </transition>
+  <transition id="t-2710-B76B3-10">
+  <name>
+   <text>IntocmireRaportEv2</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="515" y="345"/>
+   </graphics>
+  </transition>
+  <transition id="t-2710-B76B7-11">
+  <name>
+   <text>PreiaDosar</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="150" y="50"/>
+   </graphics>
+  </transition>
+  <transition id="t-2710-B76BB-12">
+  <name>
+   <text>RespingereDosar</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="865" y="50"/>
+   </graphics>
+  </transition>
+  <transition id="t-2710-B76BF-13">
+  <name>
+   <text>RespingereDosar2</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="865" y="470"/>
+   </graphics>
+  </transition>
+  <place id="p-2710-B76C3-14">
+  <name>
+   <text>TrimitereRaspuns</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="865" y="205"/>
+   </graphics>
+  </place>
+  <place id="p-2710-B76C7-15">
+  <name>
+   <text>p5</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1165" y="200"/>
+   </graphics>
+  </place>
+  <place id="p-2710-B76C9-16">
+  <name>
+   <text>p6</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="510" y="180"/>
+   </graphics>
+  </place>
+  <place id="p-2710-B76CC-17">
+  <name>
+   <text>p7</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="515" y="260"/>
+   </graphics>
+  </place>
+  <transition id="t-2710-B76CD-18">
+  <name>
+   <text>t11</text>
+    <graphics>
+     <offset x="0" y="10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="600" y="820"/>
+   </graphics>
+  </transition>
+  <transition id="t-2710-B76D1-19">
+  <name>
+   <text>t8</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1035" y="200"/>
+   </graphics>
+  </transition>
+  <arc id="e-2710-B7738-20" source="t-2710-B76CD-18" target="p-2710-B76A3-5">
+  </arc>
+  <arc id="e-2710-B773D-21" source="p-2710-B76AB-8" target="t-2710-B76BF-13">
+  </arc>
+  <arc id="e-2710-B773F-22" source="t-2710-B769A-3" target="p-2710-B76C7-15">
+  </arc>
+  <arc id="e-2710-B7741-23" source="t-2710-B76D1-19" target="p-2710-B76C7-15">
+  </arc>
+  <arc id="e-2710-B7742-24" source="p-2710-B76C3-14" target="t-2710-B76D1-19">
+  </arc>
+  <arc id="e-2710-B7743-25" source="t-2710-B769F-4" target="p-2710-B76AA-7">
+  </arc>
+  <arc id="e-2710-B7744-26" source="p-2710-B76AB-8" target="t-2710-B769F-4">
+  </arc>
+  <arc id="e-2710-B7745-27" source="p-2710-B76AA-7" target="t-2710-B76B3-10">
+  </arc>
+  <arc id="e-2710-B7746-28" source="p-2710-B76AB-8" target="t-2710-B769A-3">
+  </arc>
+  <arc id="e-2710-B7747-29" source="p-2710-B76A6-6" target="t-2710-B76AF-9">
+  </arc>
+  <arc id="e-2710-B7748-30" source="t-2710-B76BB-12" target="p-2710-B76C3-14">
+  </arc>
+  <arc id="e-2710-B774A-31" source="p-2710-B76C7-15" target="t-2710-B76CD-18">
+  </arc>
+  <arc id="e-2710-B774B-32" source="p-2710-B76A6-6" target="t-2710-B76BB-12">
+  </arc>
+  <arc id="e-2710-B774C-33" source="t-2710-B76B7-11" target="p-2710-B76AA-7">
+  </arc>
+  <arc id="e-2710-B774D-34" source="t-2710-B76B7-11" target="p-2710-B76A6-6">
+  </arc>
+  <arc id="e-2710-B774E-35" source="p-2710-B76A3-5" target="t-2710-B76B7-11">
+  </arc>
+  <arc id="e-2710-B774E-36" source="t-2710-B76B3-10" target="p-2710-B76C3-14">
+  </arc>
+  <arc id="e-2710-B7750-37" source="p-2710-B76CC-17" target="t-2710-B7685-2">
+  </arc>
+  <arc id="e-2710-B7751-38" source="t-2710-B76B3-10" target="p-2710-B76CC-17">
+  </arc>
+  <arc id="e-2710-B7753-39" source="t-2710-B7685-2" target="p-2710-B76AB-8">
+  </arc>
+  <arc id="e-2710-B7754-40" source="p-2710-B76C9-16" target="t-2710-B7685-2">
+  </arc>
+  <arc id="e-2710-B7755-41" source="t-2710-B76AF-9" target="p-2710-B76C9-16">
+  </arc>
+  <arc id="e-2710-B7756-42" source="t-2710-B76BF-13" target="p-2710-B76C7-15">
+  </arc>
+ </page>
+ </net>
+</pnml>
