@@ -1,0 +1,260 @@
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="n-1848-6CA11-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>Exercise1</text>
+  </name>
+ <page id="g-1848-6CA1F-1">
+  <place id="p-1848-6CA23-2">
+  <name>
+   <text>P1Ready</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="35" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA39-3">
+  <name>
+   <text>P1Wait</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="145" y="175"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA3E-4">
+  <name>
+   <text>P2</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="545" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA3F-5">
+  <name>
+   <text>P2ConfBuffer</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="315" y="320"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA44-6">
+  <name>
+   <text>P2Ready</text>
+    <graphics>
+     <offset x="-10" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="445" y="185"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA48-7">
+  <name>
+   <text>P2Wait</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="710" y="190"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA4A-8">
+  <name>
+   <text>P3ConfBuffer</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1090" y="320"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA4E-9">
+  <name>
+   <text>P3Done</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1090" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA52-10">
+  <name>
+   <text>P3Ready</text>
+    <graphics>
+     <offset x="-10" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="970" y="195"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA54-11">
+  <name>
+   <text>buffer1</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="265" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-1848-6CA57-12">
+  <name>
+   <text>buffer2</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="845" y="50"/>
+   </graphics>
+  </place>
+  <transition id="t-1848-6CA5B-13">
+  <name>
+   <text>t0</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="145" y="50"/>
+   </graphics>
+  </transition>
+  <transition id="t-1848-6CA5E-14">
+  <name>
+   <text>t1</text>
+    <graphics>
+     <offset x="0" y="10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="445" y="50"/>
+   </graphics>
+  </transition>
+  <transition id="t-1848-6CA61-15">
+  <name>
+   <text>t3</text>
+    <graphics>
+     <offset x="-10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="710" y="50"/>
+   </graphics>
+  </transition>
+  <transition id="t-1848-6CA63-16">
+  <name>
+   <text>t4</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="970" y="50"/>
+   </graphics>
+  </transition>
+  <transition id="t-1848-6CA66-17">
+  <name>
+   <text>t5</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1090" y="195"/>
+   </graphics>
+  </transition>
+  <transition id="t-1848-6CA68-18">
+  <name>
+   <text>t7</text>
+    <graphics>
+     <offset x="-10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="535" y="320"/>
+   </graphics>
+  </transition>
+  <transition id="t-1848-6CA6C-19">
+  <name>
+   <text>t8</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="35" y="320"/>
+   </graphics>
+  </transition>
+  <arc id="e-1848-6CADA-20" source="t-1848-6CA66-17" target="p-1848-6CA52-10">
+  </arc>
+  <arc id="e-1848-6CAE2-21" source="p-1848-6CA3F-5" target="t-1848-6CA6C-19">
+  </arc>
+  <arc id="e-1848-6CAE3-22" source="t-1848-6CA68-18" target="p-1848-6CA3F-5">
+  </arc>
+  <arc id="e-1848-6CAE4-23" source="t-1848-6CA66-17" target="p-1848-6CA4A-8">
+  </arc>
+  <arc id="e-1848-6CAE6-24" source="p-1848-6CA57-12" target="t-1848-6CA63-16">
+  </arc>
+  <arc id="e-1848-6CAE8-25" source="t-1848-6CA61-15" target="p-1848-6CA48-7">
+  </arc>
+  <arc id="e-1848-6CAE9-26" source="t-1848-6CA61-15" target="p-1848-6CA57-12">
+  </arc>
+  <arc id="e-1848-6CAEA-27" source="p-1848-6CA3E-4" target="t-1848-6CA61-15">
+  </arc>
+  <arc id="e-1848-6CAEB-28" source="p-1848-6CA44-6" target="t-1848-6CA5E-14">
+  </arc>
+  <arc id="e-1848-6CAEC-29" source="t-1848-6CA5E-14" target="p-1848-6CA3E-4">
+  </arc>
+  <arc id="e-1848-6CAED-30" source="p-1848-6CA54-11" target="t-1848-6CA5E-14">
+  </arc>
+  <arc id="e-1848-6CAEE-31" source="p-1848-6CA4E-9" target="t-1848-6CA66-17">
+  </arc>
+  <arc id="e-1848-6CAF1-32" source="t-1848-6CA5B-13" target="p-1848-6CA39-3">
+  </arc>
+  <arc id="e-1848-6CAF2-33" source="t-1848-6CA5B-13" target="p-1848-6CA54-11">
+  </arc>
+  <arc id="e-1848-6CAF2-34" source="p-1848-6CA23-2" target="t-1848-6CA5B-13">
+  </arc>
+  <arc id="e-1848-6CAF3-35" source="p-1848-6CA52-10" target="t-1848-6CA63-16">
+  </arc>
+  <arc id="e-1848-6CAF4-36" source="t-1848-6CA63-16" target="p-1848-6CA4E-9">
+  </arc>
+  <arc id="e-1848-6CAF5-37" source="p-1848-6CA4A-8" target="t-1848-6CA68-18">
+  </arc>
+  <arc id="e-1848-6CAF6-38" source="t-1848-6CA68-18" target="p-1848-6CA44-6">
+  </arc>
+  <arc id="e-1848-6CAF7-39" source="p-1848-6CA48-7" target="t-1848-6CA68-18">
+  </arc>
+  <arc id="e-1848-6CAF9-40" source="p-1848-6CA39-3" target="t-1848-6CA6C-19">
+  </arc>
+  <arc id="e-1848-6CAFA-41" source="t-1848-6CA6C-19" target="p-1848-6CA23-2">
+  </arc>
+ </page>
+ </net>
+</pnml>
