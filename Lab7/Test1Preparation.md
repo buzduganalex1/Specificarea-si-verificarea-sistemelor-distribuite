@@ -8,10 +8,14 @@
 - Marginirea
     - Exista un numar finit de tranzitii
 - Pseudoviabilitatea
+    - Daca toate tranzitiile sunt pseudoviabile
+    - O tranzitie este pseudo viabila daca exista o marcare M astfel incat sa se poate executa t
 - Blocaje
+    - Nu exista marcare astfel incat sa se poata efectua t
 - Viabilitatea
+    - Daca toate tranzitiile sunt pseudoviabile, toate tranzitiile se pot efectua
 - Reversibilitatea
-
+    - Orice marcare accesibila este marcare acasa
 ### Curs 2
 
 - Fairness
