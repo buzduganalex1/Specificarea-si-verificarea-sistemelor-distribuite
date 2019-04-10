@@ -6,6 +6,7 @@
 
 - Petri Nets
 - Marginirea
+    - Exista un numar finit de tranzitii
 - Pseudoviabilitatea
 - Blocaje
 - Viabilitatea
