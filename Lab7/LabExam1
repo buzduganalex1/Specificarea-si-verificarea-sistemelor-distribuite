@@ -1,0 +1,169 @@
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="n-C3C-92E3B-0" type ="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>LabExam1</text>
+  </name>
+ <page id="g-C3C-92E82-1">
+  <place id="p-C3C-92E92-2">
+  <name>
+   <text>BufferRaspunsServer</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="320" y="50"/>
+   </graphics>
+  </place>
+  <place id="p-C3C-933EA-3">
+  <name>
+   <text>C1Buffer</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="320" y="300"/>
+   </graphics>
+  </place>
+  <place id="p-C3C-933FE-4">
+  <name>
+   <text>ClientiActivi</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>6</text>
+   </initialMarking>
+   <graphics>
+    <position x="45" y="300"/>
+   </graphics>
+  </place>
+  <place id="p-C3C-9340D-5">
+  <name>
+   <text>ClientiIdle</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="180" y="170"/>
+   </graphics>
+  </place>
+  <place id="p-C3C-93418-6">
+  <name>
+   <text>ServerActiv</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="600" y="300"/>
+   </graphics>
+  </place>
+  <place id="p-C3C-93423-7">
+  <name>
+   <text>ServerBufferProcesare</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="450" y="160"/>
+   </graphics>
+  </place>
+  <place id="p-C3C-9342F-8">
+  <name>
+   <text>p16</text>
+    <graphics>
+     <offset x="0" y="-10" />
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>5</text>
+   </initialMarking>
+   <graphics>
+    <position x="450" y="440"/>
+   </graphics>
+  </place>
+  <transition id="t-C3C-93436-9">
+  <name>
+   <text>t0</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="180" y="300"/>
+   </graphics>
+  </transition>
+  <transition id="t-C3C-93443-10">
+  <name>
+   <text>t10</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="450" y="300"/>
+   </graphics>
+  </transition>
+  <transition id="t-C3C-9344A-11">
+  <name>
+   <text>t11</text>
+    <graphics>
+     <offset x="0" y="0" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="320" y="160"/>
+   </graphics>
+  </transition>
+  <transition id="t-C3C-93454-12">
+  <name>
+   <text>t12</text>
+    <graphics>
+     <offset x="10" y="-10" />
+    </graphics>
+  </name>
+   <graphics>
+    <position x="45" y="50"/>
+   </graphics>
+  </transition>
+  <arc id="e-C3C-9345C-13" source="t-C3C-93443-10" target="p-C3C-93418-6">
+  </arc>
+  <arc id="e-C3C-93466-14" source="p-C3C-9342F-8" target="t-C3C-93443-10">
+  </arc>
+  <arc id="e-C3C-9346E-15" source="t-C3C-93443-10" target="p-C3C-93423-7">
+  </arc>
+  <arc id="e-C3C-93471-16" source="p-C3C-933EA-3" target="t-C3C-93443-10">
+  </arc>
+  <arc id="e-C3C-93473-17" source="t-C3C-93436-9" target="p-C3C-9340D-5">
+  </arc>
+  <arc id="e-C3C-93476-18" source="t-C3C-93436-9" target="p-C3C-933EA-3">
+  </arc>
+  <arc id="e-C3C-93479-19" source="p-C3C-933FE-4" target="t-C3C-93436-9">
+  </arc>
+  <arc id="e-C3C-9347B-20" source="p-C3C-93418-6" target="t-C3C-93443-10">
+  </arc>
+  <arc id="e-C3C-9347E-21" source="t-C3C-9344A-11" target="p-C3C-93418-6">
+  </arc>
+  <arc id="e-C3C-93485-22" source="t-C3C-9344A-11" target="p-C3C-9342F-8">
+  </arc>
+  <arc id="e-C3C-93488-23" source="p-C3C-9340D-5" target="t-C3C-93454-12">
+  </arc>
+  <arc id="e-C3C-9348A-24" source="p-C3C-92E92-2" target="t-C3C-93454-12">
+  </arc>
+  <arc id="e-C3C-9348E-25" source="t-C3C-93454-12" target="p-C3C-933FE-4">
+  </arc>
+  <arc id="e-C3C-93490-26" source="t-C3C-9344A-11" target="p-C3C-92E92-2">
+  </arc>
+  <arc id="e-C3C-93493-27" source="p-C3C-93423-7" target="t-C3C-9344A-11">
+  </arc>
+ </page>
+ </net>
+</pnml>
