@@ -1,0 +1,64 @@
+t 120.0 50.0 t0 0 w n
+t 120.0 115.0 t1 0 w n
+t 120.0 180.0 t2 0 w n
+p 225.0 115.0 p2 0 n
+p 580.0 110.0 o 0 n
+p 220.0 50.0 p1 0 n
+p 225.0 180.0 p3 0 n
+t 330.0 50.0 t3 se 0 w n {} ne
+p 430.0 50.0 p4 0 n
+t 530.0 50.0 t5 se 0 w n {} ne
+t 330.0 180.0 t4 0 w n
+p 435.0 180.0 p5 0 n
+t 530.0 180.0 t6 0 w n
+t 30.0 435.0 t7 ne 0 w n {} ne
+p 310.0 435.0 P2 0 n
+t 580.0 435.0 t9 nw 0 w n {} ne
+p 580.0 555.0 P3 0 ne
+t 310.0 555.0 t8 ne 0 w n {} ne
+p 30.0 555.0 P1 1 ne
+p 30.0 115.0 i 0 n
+p 30.0 290.0 p13 0 n
+t 430.0 290.0 t13 0 w n
+t 175.0 290.0 t12 0 w n
+p 300.0 290.0 p15 0 n
+p 580.0 290.0 p14 0 n
+e t13 p14 1 n
+e t13 p15 1 n
+e p15 t13 1 n
+e p15 t12 1 n
+e t12 p15 1 n
+e p13 t12 1 n
+e p14 t9 1 n
+e t7 p13 1 n
+e P2 t9 1 n
+e P1 t7 1 n
+e t7 P1 1 n
+e t7 P2 1 n
+e P1 t8 1 n
+e t8 P2 1 n
+e P2 t8 1 n
+e t8 P3 1 n
+e P3 t9 1 n
+e t9 P3 1 n
+e p2 t3 1 n
+e p1 t4 1 n
+e t1 p2 1 n
+e t2 p3 1 n
+e p3 t4 1 n
+e t4 p4 1 n
+e t4 p5 1 n
+e t6 o 1 n
+e p5 t6 1 n
+e t5 o 1 n
+e p4 t5 1 n
+e t3 p5 1 n
+e t3 p4 1 n
+e p1 t3 1 n
+e t0 p1 1 n
+e i t2 1 n
+e i t1 1 n
+e i t0 1 n
+h WorkFlowNetSave
+
+
