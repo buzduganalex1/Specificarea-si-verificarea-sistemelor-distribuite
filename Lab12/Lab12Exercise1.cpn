@@ -516,7 +516,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>C1_sends</text>
@@ -606,7 +606,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>C1_receives</text>
@@ -680,7 +680,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>S_receives</text>
@@ -754,7 +754,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>S_sends</text>
@@ -844,7 +844,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>C2_sends</text>
@@ -934,7 +934,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>C2_receives</text>
@@ -1016,9 +1016,9 @@
                    currentcyckle="2"/>
         <transend idref="ID1412560932"/>
         <placeend idref="ID1412559947"/>
-        <annot id="ID1412571413">
-          <posattr x="-89.000000"
-                   y="137.000000"/>
+        <annot id="ID1412960631">
+          <posattr x="-88.000000"
+                   y="136.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1112,9 +1112,9 @@
                    currentcyckle="2"/>
         <transend idref="ID1412564982"/>
         <placeend idref="ID1412559947"/>
-        <annot id="ID1412574248">
+        <annot id="ID1412960632">
           <posattr x="-180.000000"
-                   y="114.000000"/>
+                   y="113.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1285,8 +1285,8 @@
                    currentcyckle="2"/>
         <transend idref="ID1412585614"/>
         <placeend idref="ID1412592031"/>
-        <annot id="ID1412596719">
-          <posattr x="399.000000"
+        <annot id="ID1412960633">
+          <posattr x="398.000000"
                    y="141.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -1317,8 +1317,8 @@
                    currentcyckle="2"/>
         <transend idref="ID1412597398"/>
         <placeend idref="ID1412592031"/>
-        <annot id="ID1412598782">
-          <posattr x="566.000000"
+        <annot id="ID1412960634">
+          <posattr x="567.000000"
                    y="145.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -1426,9 +1426,9 @@
                    currentcyckle="2"/>
         <transend idref="ID1412756254"/>
         <placeend idref="ID1412752695"/>
-        <annot id="ID1412775690">
-          <posattr x="-116.000000"
-                   y="-254.000000"/>
+        <annot id="ID1412960635">
+          <posattr x="-115.000000"
+                   y="-253.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1522,7 +1522,7 @@
                    currentcyckle="2"/>
         <transend idref="ID1412762252"/>
         <placeend idref="ID1412752695"/>
-        <annot id="ID1412779449">
+        <annot id="ID1412960636">
           <posattr x="-236.000000"
                    y="-254.000000"/>
           <fillattr colour="White"
@@ -1991,7 +1991,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>make req</text>
@@ -2065,7 +2065,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>send</text>
@@ -2147,7 +2147,7 @@
                    currentcyckle="2"/>
         <transend idref="ID1412521095"/>
         <placeend idref="ID1412520939"/>
-        <annot id="ID1412521275">
+        <annot id="ID1412960637">
           <posattr x="-109.000000"
                    y="100.000000"/>
           <fillattr colour="White"
@@ -2704,7 +2704,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>sends</text>
@@ -2778,7 +2778,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>processes</text>
@@ -2908,9 +2908,9 @@
                    currentcyckle="2"/>
         <transend idref="ID1412545465"/>
         <placeend idref="ID1412550771"/>
-        <annot id="ID1412551647">
+        <annot id="ID1412960638">
           <posattr x="-150.000000"
-                   y="-259.000000"/>
+                   y="-261.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3318,7 +3318,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>get_data</text>
@@ -3392,7 +3392,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>save_Q_data</text>
@@ -3466,7 +3466,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>processQ</text>
@@ -3540,7 +3540,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>save_P_data</text>
@@ -3614,7 +3614,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>processP</text>
@@ -4269,7 +4269,7 @@
     <binders>
       <cpnbinder id="ID1412631902"
                  x="311"
-                 y="100"
+                 y="98"
                  width="1296"
                  height="805">
         <sheets>
@@ -4323,8 +4323,8 @@
           <position value="3"/>
           <position value="1"/>
           <position value="0"/>
-          <position value="2"/>
           <position value="4"/>
+          <position value="2"/>
         </zorder>
       </cpnbinder>
     </binders>
@@ -4395,9 +4395,7 @@
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
+      <IndexNode expanded="false"/>
       <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="false"/>
