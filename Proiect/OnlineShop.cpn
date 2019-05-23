@@ -53,41 +53,123 @@
           <id>STRING</id>
           <string/>
         </color>
+        <color id="ID1414254670">
+          <id>Id</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset Id = STRING;</layout>
+        </color>
+        <color id="ID1414261685">
+          <id>OrderStatus</id>
+          <alias>
+            <id>INT</id>
+          </alias>
+          <layout>colset OrderStatus = INT;</layout>
+        </color>
         <color id="ID1414032385">
-          <id>Client</id>
+          <id>User</id>
           <product>
+            <id>Id</id>
             <id>INT</id>
             <id>STRING</id>
             <id>STRING</id>
           </product>
-          <layout>colset Client = product INT*STRING * STRING;</layout>
+          <layout>colset User = product Id*INT*STRING*STRING;</layout>
+        </color>
+        <color id="ID1414197190">
+          <id>Product</id>
+          <product>
+            <id>Id</id>
+            <id>STRING</id>
+          </product>
+          <layout>colset Product = product Id*STRING;</layout>
+        </color>
+        <color id="ID1414209003">
+          <id>ProductQuantity</id>
+          <product>
+            <id>INT</id>
+            <id>Id</id>
+          </product>
+          <layout>colset ProductQuantity = product INT*Id;</layout>
         </color>
         <color id="ID1414033748">
-          <id>ClientList</id>
+          <id>UserList</id>
           <list>
-            <id>Client</id>
+            <id>User</id>
           </list>
-          <layout>colset ClientList = list Client;</layout>
+          <layout>colset UserList= list User;</layout>
         </color>
-        <var id="ID1414045140">
+        <color id="ID1414199947">
+          <id>ProductList</id>
+          <list>
+            <id>Product</id>
+          </list>
+          <layout>colset ProductList = list Product;</layout>
+        </color>
+        <color id="ID1414210690">
+          <id>ProductQuantities</id>
+          <list>
+            <id>ProductQuantity</id>
+          </list>
+          <layout>colset ProductQuantities = list ProductQuantity;</layout>
+        </color>
+        <color id="ID1414250729">
+          <id>Order</id>
+          <product>
+            <id>Id</id>
+            <id>Id</id>
+            <id>OrderStatus</id>
+            <id>ProductList</id>
+          </product>
+          <layout>colset Order = product Id*Id*OrderStatus*ProductList;</layout>
+        </color>
+        <var id="ID1414104640">
           <type>
-            <id>ClientList</id>
+            <id>UserList</id>
           </type>
-          <id>clientList</id>
-          <layout>var clientList : ClientList;</layout>
+          <id>userList</id>
+          <layout>var userList : UserList;</layout>
+        </var>
+        <var id="ID1414202379">
+          <type>
+            <id>ProductList</id>
+          </type>
+          <id>productList</id>
+          <layout>var productList : ProductList;</layout>
+        </var>
+        <var id="ID1414214101">
+          <type>
+            <id>ProductQuantities</id>
+          </type>
+          <id>productQuantities</id>
+          <layout>var productQuantities : ProductQuantities;</layout>
         </var>
         <var id="ID1414062708">
           <type>
-            <id>Client</id>
+            <id>User</id>
           </type>
           <id>client</id>
-          <layout>var client : Client;</layout>
+          <layout>var client : User;</layout>
         </var>
-        <ml id="ID1414033848">fun RegisterClient(list, client) = ins list client;
-          <layout>fun RegisterClient(list, client) = ins list client;</layout>
+        <var id="ID1414108883">
+          <type>
+            <id>User</id>
+          </type>
+          <id>admin</id>
+          <layout>var admin : User;</layout>
+        </var>
+        <ml id="ID1414033848">fun RegisterUser(list, user) = ins list user;
+          <layout>fun RegisterUser(list, user) = ins list user;</layout>
         </ml>
-        <ml id="ID1414051159">fun IsRegistered(clientList, client) = contains clientList [client]
-          <layout>fun IsRegistered(clientList, client) = contains clientList [client]</layout>
+        <ml id="ID1414051159">fun IsRegistered(userList, user) = contains userList [user]
+          <layout>fun IsRegistered(userList, user) = contains userList [user]</layout>
+        </ml>
+        <ml id="ID1414129228">fun IsAdmin((userType,_,_)) = userType = 0;
+          <layout>fun IsAdmin((userType,_,_)) = userType = 0;</layout>
+        </ml>
+        <ml id="ID1414146615">fun CanLogin(userList,(userType,username,password)) = contains userList [(userType, username, password)]
+          <layout>fun CanLogin(userList,(userType,username,password)) = contains userList [(userType, username, password)]</layout>
         </ml>
       </block>
     </globbox>
@@ -98,8 +180,8 @@
     <page id="ID1414032293">
       <pageattr name="Client"/>
       <place id="ID1414040792">
-        <posattr x="-109.000000"
-                 y="229.000000"/>
+        <posattr x="0.000000"
+                 y="294.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -108,73 +190,21 @@
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Clients</text>
+        <text>Users</text>
         <ellipse w="60.000000"
                  h="40.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
-        <marking x="0.000000"
-                 y="0.000000"
+        <marking x="-16.000000"
+                 y="55.000000"
                  hidden="false">
           <snap snap_id="0"
-                anchor.horizontal="0"
-                anchor.vertical="0"/>
-        </marking>
-        <type id="ID1414040793">
-          <posattr x="-55.000000"
-                   y="205.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">ClientList</text>
-        </type>
-        <initmark id="ID1414040794">
-          <posattr x="64.000000"
-                   y="252.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">[(1,&quot;Alex&quot;,&quot;Buzduga&quot;),(1,&quot;George&quot;,&quot;Patrascu&quot;)]</text>
-        </initmark>
-      </place>
-      <place id="ID1414056030">
-        <posattr x="271.000000"
-                 y="42.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text></text>
-        <ellipse w="60.000000"
-                 h="40.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
-        <marking x="-8.000000"
-                 y="68.000000"
-                 hidden="false">
-          <snap snap_id="0"
-                anchor.horizontal="3"
+                anchor.horizontal="2"
                 anchor.vertical="2"/>
         </marking>
-        <type id="ID1414056031">
-          <posattr x="324.000000"
-                   y="18.000000"/>
+        <type id="ID1414040793">
+          <posattr x="0.000000"
+                   y="263.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -184,11 +214,11 @@
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">ClientList</text>
+                version="4.0.1">UserList</text>
         </type>
-        <initmark id="ID1414056032">
-          <posattr x="327.000000"
-                   y="65.000000"/>
+        <initmark id="ID1414040794">
+          <posattr x="0.000000"
+                   y="325.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -198,11 +228,11 @@
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">[(&quot;1&quot;,1,&quot;Alex&quot;,&quot;Buzduga&quot;)]</text>
         </initmark>
       </place>
       <place id="ID1414058296">
-        <posattr x="-109.000000"
+        <posattr x="-355.000000"
                  y="-126.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -225,7 +255,7 @@
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1414058297">
-          <posattr x="-30.000000"
+          <posattr x="-279.500000"
                    y="-156.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -236,11 +266,11 @@
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">Client</text>
+                version="4.0.1">User</text>
         </type>
         <initmark id="ID1414058298">
-          <posattr x="-222.000000"
-                   y="-77.000000"/>
+          <posattr x="-446.500000"
+                   y="-73.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -250,13 +280,12 @@
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">(1,&quot;George&quot;,&quot;Patrascu&quot;)</text>
+                version="4.0.1">(&quot;1&quot;,1,&quot;George&quot;,&quot;Patrascu&quot;)</text>
         </initmark>
       </place>
-      <trans id="ID1414054220"
-             explicit="false">
-        <posattr x="-109.000000"
-                 y="42.000000"/>
+      <place id="ID1414111569">
+        <posattr x="433.000000"
+                 y="-140.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -265,14 +294,21 @@
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>RegisterClient</text>
-        <box w="60.000000"
-             h="36.000000"/>
-        <binding x="7.200000"
-                 y="-3.000000"/>
-        <cond id="ID1414054221">
-          <posattr x="-258.500000"
-                   y="71.000000"/>
+        <text>GetAdminRegistration</text>
+        <ellipse w="168.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414111570">
+          <posattr x="509.500000"
+                   y="-163.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -282,11 +318,57 @@
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">[IsRegistered(clientList,client)=false]</text>
+                version="4.0.1">User</text>
+        </type>
+        <initmark id="ID1414111571">
+          <posattr x="533.500000"
+                   y="-95.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">(&quot;1&quot;, 0,&quot;Alex&quot;,&quot;Buzdugan&quot;)</text>
+        </initmark>
+      </place>
+      <trans id="ID1414054220"
+             explicit="false">
+        <posattr x="-355.000000"
+                 y="294.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>RegisterClient</text>
+        <box w="60.000000"
+             h="54.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1414054221">
+          <posattr x="-502.000000"
+                   y="332.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">[IsRegistered(userList,client)=false]</text>
         </cond>
         <time id="ID1414054222">
-          <posattr x="-64.500000"
-                   y="71.000000"/>
+          <posattr x="-310.500000"
+                   y="332.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -299,8 +381,8 @@
                 version="4.0.1"/>
         </time>
         <code id="ID1414054223">
-          <posattr x="-44.500000"
-                   y="-8.000000"/>
+          <posattr x="-290.500000"
+                   y="235.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -313,8 +395,8 @@
                 version="4.0.1"/>
         </code>
         <priority id="ID1414054225">
-          <posattr x="-177.000000"
-                   y="13.000000"/>
+          <posattr x="-423.000000"
+                   y="256.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -327,11 +409,10 @@
                 version="4.0.1"/>
         </priority>
       </trans>
-      <arc id="ID1414056410"
-           orientation="TtoP"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
+      <trans id="ID1414109534"
+             explicit="false">
+        <posattr x="433.000000"
+                 y="294.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -340,13 +421,14 @@
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1414054220"/>
-        <placeend idref="ID1414056030"/>
-        <annot id="ID1414056411">
-          <posattr x="81.000000"
-                   y="53.000000"/>
+        <text>RegisterAdmin</text>
+        <box w="60.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1414109535">
+          <posattr x="578.500000"
+                   y="334.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -356,9 +438,51 @@
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">RegisterClient(clientList,client)</text>
-        </annot>
-      </arc>
+                version="4.0.1">[IsRegistered(userList,admin) = false]</text>
+        </cond>
+        <time id="ID1414109536">
+          <posattr x="477.500000"
+                   y="325.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1414109537">
+          <posattr x="497.500000"
+                   y="242.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1414109539">
+          <posattr x="365.000000"
+                   y="263.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
       <arc id="ID1414061868"
            orientation="PtoT"
            order="1">
@@ -377,8 +501,8 @@
         <transend idref="ID1414054220"/>
         <placeend idref="ID1414058296"/>
         <annot id="ID1414061869">
-          <posattr x="-129.500000"
-                   y="-38.000000"/>
+          <posattr x="-398.500000"
+                   y="90.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -393,7 +517,7 @@
       </arc>
       <arc id="ID1414075090"
            orientation="PtoT"
-           order="1">
+           order="2">
         <posattr x="0.000000"
                  y="0.000000"/>
         <fillattr colour="White"
@@ -409,8 +533,8 @@
         <transend idref="ID1414054220"/>
         <placeend idref="ID1414040792"/>
         <annot id="ID1414075091">
-          <posattr x="-77.500000"
-                   y="130.000000"/>
+          <posattr x="-189.000000"
+                   y="312.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -420,7 +544,135 @@
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">clientList</text>
+                version="4.0.1">userList</text>
+        </annot>
+      </arc>
+      <arc id="ID1414090771"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414054220"/>
+        <placeend idref="ID1414040792"/>
+        <annot id="ID1414090772">
+          <posattr x="-172.000000"
+                   y="276.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">RegisterUser(userList,client)</text>
+        </annot>
+      </arc>
+      <arc id="ID1414113714"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414109534"/>
+        <placeend idref="ID1414111569"/>
+        <annot id="ID1414113715">
+          <posattr x="456.000000"
+                   y="76.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">admin</text>
+        </annot>
+      </arc>
+      <arc id="ID1414114459"
+           orientation="TtoP"
+           order="2">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414109534"/>
+        <placeend idref="ID1414040792"/>
+        <annot id="ID1414114460">
+          <posattr x="235.000000"
+                   y="276.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">RegisterUser(userList,admin)</text>
+        </annot>
+      </arc>
+      <arc id="ID1414115216"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414109534"/>
+        <placeend idref="ID1414040792"/>
+        <annot id="ID1414115217">
+          <posattr x="217.000000"
+                   y="312.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">userList</text>
         </annot>
       </arc>
       <constraints/>
@@ -429,6 +681,66 @@
       <pageattr name="Delivery"/>
       <constraints/>
     </page>
+    <page id="ID1414095100">
+      <pageattr name="Tests"/>
+      <constraints/>
+      <Aux id="ID1414096056">
+        <posattr x="-672.000000"
+                 y="294.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>fun IsRegistered(clientList, client) = contains clientList [client]
+fun IsAdmin((userType,_,_)) = userType = 0
+fun CanLogin(userList,(userType,username,password)) = contains userList [(userType, username, password)]
+fun GetProducts(productList) = productList;
+fun GetProductQuantity(productQuantities, productId) = rmall 0 (map (fn (quantity, id) =&gt; if (id=productId) then quantity else 0) productQuantities)
+fun GetOrdersForCustomer(orders, customerId) = orders;</text>
+      </Aux>
+      <Aux id="ID1414163175">
+        <posattr x="-672.000000"
+                 y="420.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>val users = [(&quot;1234&quot;, 1,&quot;Alex&quot;,&quot;Buzdugan&quot;),(&quot;12345&quot;, 1,&quot;George&quot;,&quot;Patrascu&quot;)];
+val client = (&quot;123&quot;,1,&quot;Alex&quot;,&quot;Buzdugan&quot;);
+val admin = (0,&quot;George&quot;,&quot;Patrascu&quot;);
+val products = [(&quot;123&quot;,&quot;Bread&quot;),(&quot;1234&quot;,&quot;Honey&quot;)];
+val productQuantities = [(2,&quot;123&quot;), (4,&quot;1234&quot;), (10,&quot;1231231&quot;)];
+val orders = [(&quot;1&quot;,&quot;123&quot;,0,[(&quot;123&quot;,&quot;Bread&quot;)])];</text>
+      </Aux>
+      <Aux id="ID1414185605">
+        <posattr x="-672.000000"
+                 y="168.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>IsAdmin(admin);
+IsRegistered(users,admin);
+CanLogin(users,client);
+GetProducts(products);
+GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
+      </Aux>
+    </page>
     <instances>
       <instance id="ID2149"
                 page="ID6"/>
@@ -436,6 +748,8 @@
                 page="ID1414032293"/>
       <instance id="ID1414032321"
                 page="ID1414032319"/>
+      <instance id="ID1414095102"
+                page="ID1414095100"/>
     </instances>
     <options>
       <option name="realtimestamp">
@@ -458,12 +772,7 @@
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10004.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -473,7 +782,12 @@
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -686,36 +1000,38 @@
     </options>
     <binders>
       <cpnbinder id="ID1414039604"
-                 x="478"
-                 y="67"
-                 width="1424"
-                 height="874">
+                 x="624"
+                 y="34"
+                 width="1143"
+                 height="908">
         <sheets>
           <cpnsheet id="ID1414039593"
-                    panx="216.000000"
-                    pany="137.000000"
+                    panx="-299.000000"
+                    pany="38.000000"
                     zoom="1.000000"
                     instance="ID1414032295">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
-          <textsheet id="ID1414090275"
-                     panx="7.000000"
-                     pany="20.000000"
-                     zoom="1.000000"
-                     decl="ID1414051159">
-            <zorder/>
-          </textsheet>
+          <cpnsheet id="ID1414095409"
+                    panx="230.000000"
+                    pany="204.000000"
+                    zoom="1.000000"
+                    instance="ID1414095102">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
         </sheets>
         <zorder>
-          <position value="1"/>
           <position value="0"/>
+          <position value="1"/>
         </zorder>
       </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="true">
+    <IndexNode expanded="false">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -804,9 +1120,22 @@
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false"/>
+      <IndexNode expanded="true"/>
       <IndexNode expanded="true"/>
       <IndexNode expanded="true"/>
       <IndexNode expanded="true"/>

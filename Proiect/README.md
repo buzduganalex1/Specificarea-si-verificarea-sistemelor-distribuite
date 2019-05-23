@@ -11,9 +11,7 @@ Model an online shop using cpn tools. The model has to be comprise of three modu
 
 - Permite inregistrarea de clienti noi, login penru clienti deja inregistrati
 - Baza de date clienti (utilizand liste): pentru fiecare client se retin, pe langa datele personale, comenzile clientului respectiv
-- Un client pot vedea produsele dintr-o anumita categorie (nu si cantitatea
-disponibila), poate alege sa cumpere diverse cantitatati dintr-un produs (acest
-lucru va fi posibil daca exista cantitatea necesara) si poate alege un anumit tip
+- Un client pot vedea produsele dintr-o anumita categorie (nu si cantitatea disponibila), poate alege sa cumpere diverse cantitatati dintr-un produs (acest lucru va fi posibil daca exista cantitatea necesara) si poate alege un anumit tip
 de livrare. In functie de tipul de livrare ales, la costul produselor se adauga
 costul de livrare. In comanda se va include si o adres de livrare. Se va genera o
 camanda cu aceste date, care va avea un anumit identificator. Comanda poate fi
