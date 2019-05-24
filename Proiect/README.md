@@ -11,7 +11,7 @@ Model an online shop using cpn tools. The model has to be comprise of three modu
 
 - Permite inregistrarea de clienti noi, login penru clienti deja inregistrati
 - Baza de date clienti (utilizand liste): pentru fiecare client se retin, pe langa datele personale, comenzile clientului respectiv
-- Un client pot vedea produsele dintr-o anumita categorie (nu si cantitatea disponibila), poate alege sa cumpere diverse cantitatati dintr-un produs (acest lucru va fi posibil daca exista cantitatea necesara) si poate alege un anumit tip
+- Un client poate vedea produsele dintr-o anumita categorie (nu si cantitatea disponibila), poate alege sa cumpere diverse cantitatati dintr-un produs (acest lucru va fi posibil daca exista cantitatea necesara) si poate alege un anumit tip
 de livrare. In functie de tipul de livrare ales, la costul produselor se adauga
 costul de livrare. In comanda se va include si o adres de livrare. Se va genera o
 camanda cu aceste date, care va avea un anumit identificator. Comanda poate fi
@@ -44,3 +44,39 @@ cantitatea care va fi eliminata)
 
 ## Implementation description
 
+colset User = product Id*Username*Password*UserType*UserDetails;
+colset UserDetails = product Name*Surname*DeliveryAdress;
+colset Price = product INT*STRING;
+colset Product = product Id*Description*Category*Price;
+colset ProductQuantity = product ProductId*Quantity;
+colset Order = product Id*UserId*Products*Status*DeliveryType*Total;
+colset DeliveryType = INT;
+colset DeliveryAdress = STRING;
+colset Notification = STRING;
+
+// Registration
+fun IsRegistered(user);
+fun IsAdmin(user);
+fun CanLogin(user);
+fun GenerateUniqueId();
+
+// Products
+fun GetProducts();
+fun GetProducts(category);
+fun GetQuantityForProduct();
+fun GetProductsQuantity();
+fun SetProductQuantity(productId, quantity);
+fun RemoveProduct(productId;)
+
+// Order
+fun CreateCustomerOrder(customerId) -> orderId;
+fun AddProductInCustomerOrder(orderId, productId, quantity);
+fun SetOrderDeliveryType(orderId, deliveryType);
+fun SetOrderDeliveryAdress(orderId, deliveryAdress);
+fun SetOrderStatus(orderId,orderStatus);
+fun GetCustomerOrders(customerId);
+fun GetCustomerOrders(adress);
+fun GetOrdersTotal();
+
+// Notification
+fun NotifyUser(userId, notification);
