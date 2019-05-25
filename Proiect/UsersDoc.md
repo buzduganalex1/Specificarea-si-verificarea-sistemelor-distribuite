@@ -32,9 +32,11 @@ fun RegisterUser(users, user) = ins users user;
 
 ## Tests
 
+```
 IsAdmin(client);
 IsAdmin(admin);
 IsRegistered(users,client);
 IsRegistered(users,admin);
 CanLogin(users,client);
 CanLogin(users,admin);
+```
