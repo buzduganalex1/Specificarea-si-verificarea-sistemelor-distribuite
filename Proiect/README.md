@@ -43,7 +43,7 @@ un anumit produse) sau se pot elimina anumite produse din stoc (se selecteaza
 cantitatea care va fi eliminata)
 
 ## Implementation description
-
+```
 colset User = product Id*Username*Password*UserType*UserDetails;
 colset UserDetails = product Name*Surname*DeliveryAdress;
 colset Price = product INT*STRING;
@@ -80,14 +80,3 @@ fun GetOrdersTotal();
 
 // Notification
 fun NotifyUser(userId, notification);
-
-## Test Data
-
-```
-
-
-val products = [("123","Bread"),("1234","Honey")];
-val productQuantities = [(2,"123"), (4,"1234"), (10,"1231231")];
-val orders = [("1","123",0,[("123","Bread")])];
-```
-
