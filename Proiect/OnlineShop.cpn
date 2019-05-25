@@ -207,16 +207,9 @@
             <id>Description</id>
             <id>Category</id>
             <id>Price</id>
-          </product>
-          <layout>colset Product = product Id*Description*Category*Price;</layout>
-        </color>
-        <color id="ID1414290081">
-          <id>ProductQuantity</id>
-          <product>
-            <id>ProductId</id>
             <id>Quantity</id>
           </product>
-          <layout>colset ProductQuantity = product ProductId*Quantity;</layout>
+          <layout>colset Product = product Id*Description*Category*Price*Quantity;</layout>
         </color>
         <color id="ID1414199947">
           <id>Products</id>
@@ -231,13 +224,6 @@
             <id>User</id>
           </list>
           <layout>colset Users = list User;</layout>
-        </color>
-        <color id="ID1414210690">
-          <id>ProductQuantities</id>
-          <list>
-            <id>ProductQuantity</id>
-          </list>
-          <layout>colset ProductQuantities = list ProductQuantity;</layout>
         </color>
         <color id="ID1414290084">
           <id>Order</id>
@@ -264,13 +250,6 @@
           </type>
           <id>products</id>
           <layout>var products : Products;</layout>
-        </var>
-        <var id="ID1414214101">
-          <type>
-            <id>ProductQuantities</id>
-          </type>
-          <id>productQuantities</id>
-          <layout>var productQuantities : ProductQuantities;</layout>
         </var>
         <var id="ID1414062708">
           <type>
@@ -322,7 +301,7 @@
       <constraints/>
       <Aux id="ID1414096056">
         <posattr x="-672.000000"
-                 y="306.000000"/>
+                 y="307.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -332,9 +311,10 @@
         <textattr colour="Black"
                   bold="false"/>
         <label/>
-        <text>
-fun GetProducts(productList) = productList;
-fun GetProductQuantity(productQuantities, productId) = rmall 0 (map (fn (quantity, id) =&gt; if (id=productId) then quantity else 0) productQuantities)</text>
+        <text>fun GetProducts(productList) = productList;
+fun GetQuantityForProduct(productQuantities, productId) = rmall 0 (map (fn (quantity, id) =&gt; if (id=productId) then quantity else 0) productQuantities)
+fun FilterProducts (products, category) =  List.filter (fn((_,_,c,_)) =&gt; c=category) products;
+</text>
       </Aux>
       <Aux id="ID1414163175">
         <posattr x="-672.000000"
@@ -454,8 +434,83 @@ val test = GenerateId();</text>
       </Aux>
     </page>
     <page id="ID1414318467">
-      <pageattr name="New Page"/>
+      <pageattr name="Products"/>
       <constraints/>
+      <Aux id="ID1414321233">
+        <posattr x="-630.000000"
+                 y="546.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>
+val breadId = GenerateId();
+val breadCategory = &quot;Bakery&quot;;
+val breadPrice = 10;
+val breadDescription = &quot;Bread&quot;
+val breadQuantity = 100;
+val bread = (breadId,breadDescription,breadCategory,breadPrice,breadQuantity);
+
+val cheeseId = GenerateId();
+val cheeseCategory = &quot;Dairy&quot;;
+val cheesePrice = 20;
+val cheeseDescription = &quot;Cheese&quot;;
+val cheeseQuantity = 50;
+val cheese = (cheeseId,cheeseDescription,cheeseCategory,cheesePrice,cheeseQuantity);
+
+val sausageId = GenerateId();
+val sausageCategory = &quot;Meat&quot;;
+val sausagePrice = 30;
+val sausageDescription = &quot;Sausage&quot;;
+val sausageQuantity = 30;
+val sausage = (sausageId,sausageDescription,sausageCategory,sausagePrice,sausageQuantity);
+
+val products = [bread,sausage,cheese];</text>
+      </Aux>
+      <Aux id="ID1414322048">
+        <posattr x="-630.000000"
+                 y="195.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>fun GetProducts(productList) = productList;
+fun GetQuantityForProduct(products, productId) = rmall 0 (map (fn (id,_,_,_,quantity) =&gt; if (id=productId) then quantity else 0) products)
+fun FilterProducts (products, category) =  List.filter (fn((_,_,c,_,_)) =&gt; c=category) products;
+fun SetProductQuantity (productId, quantity, []) = []
+    | SetProductQuantity (productId, quantity, (id,a,b,c,q) :: products) = (if id = productId then (id,a,b,c,quantity) else (id,a,b,c,q)) :: (SetProductQuantity (productId,quantity, products));
+    </text>
+      </Aux>
+      <Aux id="ID1414322875">
+        <posattr x="-630.000000"
+                 y="56.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>GetProducts(products);
+FilterProducts(products,&quot;Bakery&quot;);
+FilterProducts(products,&quot;Meat&quot;);
+FilterProducts(products,&quot;Dairy&quot;);
+FilterProducts(products,&quot;None&quot;);
+GetQuantityForProduct(products, breadId);
+GetQuantityForProduct(SetProductQuantity(breadId, 300,products), breadId);</text>
+      </Aux>
     </page>
     <instances>
       <instance id="ID2149"
@@ -720,20 +775,11 @@ val test = GenerateId();</text>
     </options>
     <binders>
       <cpnbinder id="ID1414039604"
-                 x="252"
-                 y="39"
+                 x="589"
+                 y="38"
                  width="958"
-                 height="933">
+                 height="914">
         <sheets>
-          <cpnsheet id="ID1414095409"
-                    panx="210.000000"
-                    pany="20.000000"
-                    zoom="1.000000"
-                    instance="ID1414095102">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
           <cpnsheet id="ID1414294528"
                     panx="148.000000"
                     pany="415.000000"
@@ -752,16 +798,35 @@ val test = GenerateId();</text>
               <position value="0"/>
             </zorder>
           </cpnsheet>
+          <cpnsheet id="ID1414319242"
+                    panx="59.000000"
+                    pany="125.000000"
+                    zoom="1.000000"
+                    instance="ID1414318469">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1414095409"
+                    panx="212.000000"
+                    pany="138.000000"
+                    zoom="1.000000"
+                    instance="ID1414095102">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
         </sheets>
         <zorder>
-          <position value="0"/>
-          <position value="2"/>
           <position value="1"/>
+          <position value="0"/>
+          <position value="3"/>
+          <position value="2"/>
         </zorder>
       </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="true">
+    <IndexNode expanded="false">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -830,7 +895,7 @@ val test = GenerateId();</text>
       <IndexNode expanded="false">
         <IndexNode expanded="false"/>
       </IndexNode>
-      <IndexNode expanded="false">
+      <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -855,9 +920,6 @@ val test = GenerateId();</text>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
