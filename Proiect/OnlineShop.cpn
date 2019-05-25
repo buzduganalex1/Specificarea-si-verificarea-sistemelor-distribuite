@@ -60,6 +60,62 @@
           </alias>
           <layout>colset Id = INT;</layout>
         </color>
+        <color id="ID1414287463">
+          <id>Name</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset Name = STRING;</layout>
+        </color>
+        <color id="ID1414287714">
+          <id>Surname</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset Surname = STRING;</layout>
+        </color>
+        <color id="ID1414288453">
+          <id>DeliveryAdress</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset DeliveryAdress = STRING;</layout>
+        </color>
+        <color id="ID1414288875">
+          <id>Username</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset Username = STRING;</layout>
+        </color>
+        <color id="ID1414290087">
+          <id>DeliveryType</id>
+          <alias>
+            <id>INT</id>
+          </alias>
+          <layout>colset DeliveryType = INT;</layout>
+        </color>
+        <color id="ID1414289370">
+          <id>Password</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset Password = STRING;</layout>
+        </color>
+        <color id="ID1414292457">
+          <id>UserType</id>
+          <alias>
+            <id>INT</id>
+          </alias>
+          <layout>colset UserType = INT;</layout>
+        </color>
+        <color id="ID1414290093">
+          <id>Notification</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset Notification = STRING;</layout>
+        </color>
         <color id="ID1414261685">
           <id>OrderStatus</id>
           <alias>
@@ -67,17 +123,76 @@
           </alias>
           <layout>colset OrderStatus = INT;</layout>
         </color>
-        <color id="ID1414032385">
+        <color id="ID1414291694">
+          <id>Quantity</id>
+          <alias>
+            <id>INT</id>
+          </alias>
+          <layout>colset Quantity = INT;</layout>
+        </color>
+        <color id="ID1414291898">
+          <id>Description</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset Description = STRING;</layout>
+        </color>
+        <color id="ID1414291901">
+          <id>Category</id>
+          <alias>
+            <id>STRING</id>
+          </alias>
+          <layout>colset Category = STRING;</layout>
+        </color>
+        <color id="ID1414292124">
+          <id>ProductId</id>
+          <alias>
+            <id>Id</id>
+          </alias>
+          <layout>colset ProductId = Id;</layout>
+        </color>
+        <color id="ID1414292694">
+          <id>UserId</id>
+          <alias>
+            <id>Id</id>
+          </alias>
+          <layout>colset UserId = Id;</layout>
+        </color>
+        <color id="ID1414293859">
+          <id>Total</id>
+          <alias>
+            <id>INT</id>
+          </alias>
+          <layout>colset Total = INT;</layout>
+        </color>
+        <color id="ID1414293897">
+          <id>Status</id>
+          <alias>
+            <id>INT</id>
+          </alias>
+          <layout>colset Status = INT;</layout>
+        </color>
+        <color id="ID1414290072">
+          <id>UserDetails</id>
+          <product>
+            <id>Name</id>
+            <id>Surname</id>
+            <id>DeliveryAdress</id>
+          </product>
+          <layout>colset UserDetails = product Name*Surname*DeliveryAdress;</layout>
+        </color>
+        <color id="ID1414033748">
           <id>User</id>
           <product>
             <id>Id</id>
-            <id>INT</id>
-            <id>STRING</id>
-            <id>STRING</id>
+            <id>Username</id>
+            <id>Password</id>
+            <id>UserType</id>
+            <id>UserDetails</id>
           </product>
-          <layout>colset User = product Id*INT*STRING*STRING;</layout>
+          <layout>colset User = product Id*Username*Password*UserType*UserDetails;</layout>
         </color>
-        <color id="ID1414284617">
+        <color id="ID1414290075">
           <id>Price</id>
           <product>
             <id>INT</id>
@@ -85,36 +200,37 @@
           </product>
           <layout>colset Price = product INT*STRING;</layout>
         </color>
-        <color id="ID1414197190">
+        <color id="ID1414290078">
           <id>Product</id>
           <product>
             <id>Id</id>
-            <id>STRING</id>
+            <id>Description</id>
+            <id>Category</id>
             <id>Price</id>
           </product>
-          <layout>colset Product = product Id*STRING*Price;</layout>
+          <layout>colset Product = product Id*Description*Category*Price;</layout>
         </color>
-        <color id="ID1414209003">
+        <color id="ID1414290081">
           <id>ProductQuantity</id>
           <product>
-            <id>INT</id>
-            <id>Id</id>
+            <id>ProductId</id>
+            <id>Quantity</id>
           </product>
-          <layout>colset ProductQuantity = product INT*Id;</layout>
-        </color>
-        <color id="ID1414033748">
-          <id>UserList</id>
-          <list>
-            <id>User</id>
-          </list>
-          <layout>colset UserList= list User;</layout>
+          <layout>colset ProductQuantity = product ProductId*Quantity;</layout>
         </color>
         <color id="ID1414199947">
-          <id>ProductList</id>
+          <id>Products</id>
           <list>
             <id>Product</id>
           </list>
-          <layout>colset ProductList = list Product;</layout>
+          <layout>colset Products = list Product;</layout>
+        </color>
+        <color id="ID1414293074">
+          <id>Users</id>
+          <list>
+            <id>User</id>
+          </list>
+          <layout>colset Users = list User;</layout>
         </color>
         <color id="ID1414210690">
           <id>ProductQuantities</id>
@@ -123,29 +239,31 @@
           </list>
           <layout>colset ProductQuantities = list ProductQuantity;</layout>
         </color>
-        <color id="ID1414250729">
+        <color id="ID1414290084">
           <id>Order</id>
           <product>
             <id>Id</id>
-            <id>Id</id>
-            <id>OrderStatus</id>
-            <id>ProductList</id>
+            <id>UserId</id>
+            <id>Products</id>
+            <id>Status</id>
+            <id>DeliveryType</id>
+            <id>Total</id>
           </product>
-          <layout>colset Order = product Id*Id*OrderStatus*ProductList;</layout>
+          <layout>colset Order = product Id*UserId*Products*Status*DeliveryType*Total;</layout>
         </color>
         <var id="ID1414104640">
           <type>
-            <id>UserList</id>
+            <id>Users</id>
           </type>
-          <id>userList</id>
-          <layout>var userList : UserList;</layout>
+          <id>users</id>
+          <layout>var users : Users;</layout>
         </var>
         <var id="ID1414202379">
           <type>
-            <id>ProductList</id>
+            <id>Products</id>
           </type>
-          <id>productList</id>
-          <layout>var productList : ProductList;</layout>
+          <id>products</id>
+          <layout>var products : Products;</layout>
         </var>
         <var id="ID1414214101">
           <type>
@@ -174,516 +292,25 @@
         <ml id="ID1414051159">fun IsRegistered(userList, user) = contains userList [user]
           <layout>fun IsRegistered(userList, user) = contains userList [user]</layout>
         </ml>
-        <ml id="ID1414129228">fun IsAdmin((userType,_,_)) = userType = 0;
-          <layout>fun IsAdmin((userType,_,_)) = userType = 0;</layout>
+        <ml id="ID1414129228">fun IsAdmin((_,userType,_,_)) = userType = 0
+          <layout>fun IsAdmin((_,userType,_,_)) = userType = 0</layout>
         </ml>
         <ml id="ID1414146615">fun CanLogin(userList,(userType,username,password)) = contains userList [(userType, username, password)]
           <layout>fun CanLogin(userList,(userType,username,password)) = contains userList [(userType, username, password)]</layout>
+        </ml>
+        <ml id="ID1414285841">fun GetProductQuantity(productQuantities, productId) = rmall 0 (map (fn (quantity, id) =&gt; if (id=productId) then quantity else 0) productQuantities)
+          <layout>fun GetProductQuantity(productQuantities, productId) = rmall 0 (map (fn (quantity, id) =&gt; if (id=productId) then quantity else 0) productQuantities)</layout>
+        </ml>
+        <ml id="ID1414286126">fun GetProducts(productList) = productList;
+          <layout>fun GetProducts(productList) = productList;</layout>
+        </ml>
+        <ml id="ID1414307714">fun GenerateId() = discrete (0,1000000000)
+          <layout>fun GenerateId() = discrete (0,1000000000)</layout>
         </ml>
       </block>
     </globbox>
     <page id="ID6">
       <pageattr name="Admin"/>
-      <constraints/>
-    </page>
-    <page id="ID1414032293">
-      <pageattr name="Client"/>
-      <place id="ID1414040792">
-        <posattr x="0.000000"
-                 y="294.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>Users</text>
-        <ellipse w="60.000000"
-                 h="40.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
-        <marking x="-16.000000"
-                 y="55.000000"
-                 hidden="false">
-          <snap snap_id="0"
-                anchor.horizontal="2"
-                anchor.vertical="2"/>
-        </marking>
-        <type id="ID1414040793">
-          <posattr x="0.000000"
-                   y="263.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">UserList</text>
-        </type>
-        <initmark id="ID1414040794">
-          <posattr x="0.000000"
-                   y="325.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">[(1,1,&quot;Alex&quot;,&quot;Buzduga&quot;)]</text>
-        </initmark>
-      </place>
-      <place id="ID1414058296">
-        <posattr x="-355.000000"
-                 y="-126.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>GetClientRegistration</text>
-        <ellipse w="164.000000"
-                 h="58.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
-        <marking x="0.000000"
-                 y="0.000000"
-                 hidden="false">
-          <snap snap_id="0"
-                anchor.horizontal="0"
-                anchor.vertical="0"/>
-        </marking>
-        <type id="ID1414058297">
-          <posattr x="-279.500000"
-                   y="-156.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">User</text>
-        </type>
-        <initmark id="ID1414058298">
-          <posattr x="-440.500000"
-                   y="-73.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">(2,1,&quot;George&quot;,&quot;Patrascu&quot;)</text>
-        </initmark>
-      </place>
-      <place id="ID1414111569">
-        <posattr x="433.000000"
-                 y="-140.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>GetAdminRegistration</text>
-        <ellipse w="168.000000"
-                 h="40.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
-        <marking x="0.000000"
-                 y="0.000000"
-                 hidden="false">
-          <snap snap_id="0"
-                anchor.horizontal="0"
-                anchor.vertical="0"/>
-        </marking>
-        <type id="ID1414111570">
-          <posattr x="509.500000"
-                   y="-163.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">User</text>
-        </type>
-        <initmark id="ID1414111571">
-          <posattr x="527.500000"
-                   y="-95.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">(3, 0,&quot;Alex&quot;,&quot;Buzdugan&quot;)</text>
-        </initmark>
-      </place>
-      <trans id="ID1414054220"
-             explicit="false">
-        <posattr x="-355.000000"
-                 y="294.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>RegisterClient</text>
-        <box w="60.000000"
-             h="54.000000"/>
-        <binding x="7.200000"
-                 y="-3.000000"/>
-        <cond id="ID1414054221">
-          <posattr x="-502.000000"
-                   y="332.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">[IsRegistered(userList,client)=false]</text>
-        </cond>
-        <time id="ID1414054222">
-          <posattr x="-310.500000"
-                   y="332.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </time>
-        <code id="ID1414054223">
-          <posattr x="-290.500000"
-                   y="235.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </code>
-        <priority id="ID1414054225">
-          <posattr x="-423.000000"
-                   y="256.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </priority>
-      </trans>
-      <trans id="ID1414109534"
-             explicit="false">
-        <posattr x="433.000000"
-                 y="294.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>RegisterAdmin</text>
-        <box w="60.000000"
-             h="40.000000"/>
-        <binding x="7.200000"
-                 y="-3.000000"/>
-        <cond id="ID1414109535">
-          <posattr x="578.500000"
-                   y="334.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">[IsRegistered(userList,admin) = false]</text>
-        </cond>
-        <time id="ID1414109536">
-          <posattr x="477.500000"
-                   y="325.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </time>
-        <code id="ID1414109537">
-          <posattr x="497.500000"
-                   y="242.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </code>
-        <priority id="ID1414109539">
-          <posattr x="365.000000"
-                   y="263.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </priority>
-      </trans>
-      <arc id="ID1414061868"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1414054220"/>
-        <placeend idref="ID1414058296"/>
-        <annot id="ID1414061869">
-          <posattr x="-398.500000"
-                   y="90.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">client</text>
-        </annot>
-      </arc>
-      <arc id="ID1414075090"
-           orientation="PtoT"
-           order="2">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1414054220"/>
-        <placeend idref="ID1414040792"/>
-        <annot id="ID1414075091">
-          <posattr x="-189.000000"
-                   y="312.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">userList</text>
-        </annot>
-      </arc>
-      <arc id="ID1414090771"
-           orientation="TtoP"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1414054220"/>
-        <placeend idref="ID1414040792"/>
-        <annot id="ID1414090772">
-          <posattr x="-172.000000"
-                   y="276.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">RegisterUser(userList,client)</text>
-        </annot>
-      </arc>
-      <arc id="ID1414113714"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1414109534"/>
-        <placeend idref="ID1414111569"/>
-        <annot id="ID1414113715">
-          <posattr x="456.000000"
-                   y="76.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">admin</text>
-        </annot>
-      </arc>
-      <arc id="ID1414114459"
-           orientation="TtoP"
-           order="2">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1414109534"/>
-        <placeend idref="ID1414040792"/>
-        <annot id="ID1414114460">
-          <posattr x="235.000000"
-                   y="276.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">RegisterUser(userList,admin)</text>
-        </annot>
-      </arc>
-      <arc id="ID1414115216"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1414109534"/>
-        <placeend idref="ID1414040792"/>
-        <annot id="ID1414115217">
-          <posattr x="217.000000"
-                   y="312.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">userList</text>
-        </annot>
-      </arc>
       <constraints/>
     </page>
     <page id="ID1414032319">
@@ -695,7 +322,7 @@
       <constraints/>
       <Aux id="ID1414096056">
         <posattr x="-672.000000"
-                 y="274.000000"/>
+                 y="306.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -705,13 +332,9 @@
         <textattr colour="Black"
                   bold="false"/>
         <label/>
-        <text>fun IsRegistered(clientList, client) = contains clientList [client]
-fun IsAdmin((_,userType,_,_)) = userType = 0
-fun CanLogin(userList,(id,userType,username,password)) = contains userList [(id,userType, username, password)]
+        <text>
 fun GetProducts(productList) = productList;
-fun GetProductQuantity(productQuantities, productId) = rmall 0 (map (fn (quantity, id) =&gt; if (id=productId) then quantity else 0) productQuantities)
-fun GetOrdersForCustomer(orders, customerId) = orders;
-fun PlaceOrder(customerId, orderList, productList) = ins orderList ();</text>
+fun GetProductQuantity(productQuantities, productId) = rmall 0 (map (fn (quantity, id) =&gt; if (id=productId) then quantity else 0) productQuantities)</text>
       </Aux>
       <Aux id="ID1414163175">
         <posattr x="-672.000000"
@@ -726,17 +349,13 @@ fun PlaceOrder(customerId, orderList, productList) = ins orderList ();</text>
                   bold="false"/>
         <label/>
         <text>
-val client = (1,1,&quot;Alex&quot;,&quot;Buzduga&quot;)
-val admin = (2, 0,&quot;George&quot;,&quot;Patrascu&quot;);
-val users = [client,admin];
-
 val products = [(&quot;123&quot;,&quot;Bread&quot;),(&quot;1234&quot;,&quot;Honey&quot;)];
 val productQuantities = [(2,&quot;123&quot;), (4,&quot;1234&quot;), (10,&quot;1231231&quot;)];
 val orders = [(&quot;1&quot;,&quot;123&quot;,0,[(&quot;123&quot;,&quot;Bread&quot;)])];</text>
       </Aux>
       <Aux id="ID1414185605">
         <posattr x="-672.000000"
-                 y="149.000000"/>
+                 y="147.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -746,22 +365,111 @@ val orders = [(&quot;1&quot;,&quot;123&quot;,0,[(&quot;123&quot;,&quot;Bread&quo
         <textattr colour="Black"
                   bold="false"/>
         <label/>
-        <text>IsAdmin(admin);
-IsRegistered(users,admin);
-CanLogin(users,client);
+        <text>
 GetProducts(products);
 GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
       </Aux>
     </page>
+    <page id="ID1414294407">
+      <pageattr name="Users"/>
+      <constraints/>
+      <Aux id="ID1414294953">
+        <posattr x="-546.000000"
+                 y="840.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>val adminType = 0;
+val clientType = 1;
+val adminId = GenerateId();
+val clientId = GenerateId();
+val clientDetails = (&quot;Alex&quot;,&quot;Buzdugan&quot;,&quot;Strada Bucuresti&quot;);
+val client = (clientId,&quot;Username&quot;,&quot;password&quot;,clientType,clientDetails);
+val adminDetails = (&quot;Admin&quot;,&quot;Admin&quot;,&quot;Strada Bucuresti 2&quot;);
+val admin = (adminId,&quot;Admin&quot;,&quot;password&quot;,adminType,adminDetails);
+val users = [client,admin];</text>
+      </Aux>
+      <Aux id="ID1414296352">
+        <posattr x="-546.000000"
+                 y="672.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>fun IsAdmin((_,_,_,userType,_)) = userType = 0;
+fun IsRegistered(users, user) = contains users [user];
+fun CanLogin(users, user) = contains users [user];
+fun RegisterUser(users, user) = ins users user;</text>
+      </Aux>
+      <Aux id="ID1414296994">
+        <posattr x="-546.000000"
+                 y="546.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>IsAdmin(client);
+IsAdmin(admin);
+IsRegistered(users,client);
+IsRegistered(users,admin);
+CanLogin(users,client);
+CanLogin(users,admin);
+</text>
+      </Aux>
+    </page>
+    <page id="ID1414303899">
+      <pageattr name="Utils"/>
+      <constraints/>
+      <Aux id="ID1414304659">
+        <posattr x="-462.000000"
+                 y="366.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>fun GenerateId() = discrete (0,1000000000)
+
+val test = GenerateId();</text>
+      </Aux>
+    </page>
+    <page id="ID1414318467">
+      <pageattr name="New Page"/>
+      <constraints/>
+    </page>
     <instances>
       <instance id="ID2149"
                 page="ID6"/>
-      <instance id="ID1414032295"
-                page="ID1414032293"/>
       <instance id="ID1414032321"
                 page="ID1414032319"/>
       <instance id="ID1414095102"
                 page="ID1414095100"/>
+      <instance id="ID1414294409"
+                page="ID1414294407"/>
+      <instance id="ID1414303901"
+                page="ID1414303899"/>
+      <instance id="ID1414318469"
+                page="ID1414318467"/>
     </instances>
     <options>
       <option name="realtimestamp">
@@ -784,12 +492,7 @@ GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10001.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10005.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -799,7 +502,12 @@ GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10002.enable">
+      <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -1012,25 +720,34 @@ GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
     </options>
     <binders>
       <cpnbinder id="ID1414039604"
-                 x="624"
-                 y="34"
+                 x="252"
+                 y="39"
                  width="958"
-                 height="908">
+                 height="933">
         <sheets>
-          <cpnsheet id="ID1414039593"
-                    panx="-293.000000"
-                    pany="85.000000"
+          <cpnsheet id="ID1414095409"
+                    panx="210.000000"
+                    pany="20.000000"
                     zoom="1.000000"
-                    instance="ID1414032295">
+                    instance="ID1414095102">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
-          <cpnsheet id="ID1414095409"
-                    panx="130.000000"
-                    pany="257.000000"
+          <cpnsheet id="ID1414294528"
+                    panx="148.000000"
+                    pany="415.000000"
                     zoom="1.000000"
-                    instance="ID1414095102">
+                    instance="ID1414294409">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1414304397"
+                    panx="0.000000"
+                    pany="0.000000"
+                    zoom="1.000000"
+                    instance="ID1414303901">
             <zorder>
               <position value="0"/>
             </zorder>
@@ -1038,6 +755,7 @@ GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
         </sheets>
         <zorder>
           <position value="0"/>
+          <position value="2"/>
           <position value="1"/>
         </zorder>
       </cpnbinder>
@@ -1112,8 +830,8 @@ GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
       <IndexNode expanded="false">
         <IndexNode expanded="false"/>
       </IndexNode>
-      <IndexNode expanded="true">
-        <IndexNode expanded="true">
+      <IndexNode expanded="false">
+        <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -1121,6 +839,25 @@ GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
         <IndexNode expanded="true">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -1148,6 +885,8 @@ GetProductQuantity(productQuantities, &quot;1231231&quot;);</text>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false"/>
+      <IndexNode expanded="true"/>
+      <IndexNode expanded="true"/>
       <IndexNode expanded="true"/>
       <IndexNode expanded="true"/>
       <IndexNode expanded="true"/>
