@@ -300,6 +300,11 @@
         <ml id="ID1414680587">fun RemoveProduct(products, productId) = rmall (GetProduct(products, productId)) products;
           <layout>fun RemoveProduct(products, productId) = rmall (GetProduct(products, productId)) products;</layout>
         </ml>
+        <ml id="ID1414700890">fun GetProductsTotalValue[] = 0
+  | GetProductsTotalValue((_,_,_,price,_)::products) = price + GetProductsTotalValue products;
+          <layout>fun GetProductsTotalValue[] = 0
+  | GetProductsTotalValue((_,_,_,price,_)::products) = price + GetProductsTotalValue products;</layout>
+        </ml>
       </block>
     </globbox>
     <page id="ID6">
@@ -448,11 +453,13 @@ fun FilterProducts (products, category) =  List.filter (fn((_,_,c,_,_)) =&gt; c=
 fun SetProductQuantity (productId, quantity, []) = []
     | SetProductQuantity (productId, quantity, (id,a,b,c,q) :: products) = (if id = productId then (id,a,b,c,quantity) else (id,a,b,c,q)) :: (SetProductQuantity (productId,quantity, products));
 fun GetProduct (products, productId) = List.nth(List.filter (fn((id,_,_,_,_)) =&gt; id=productId) products, 0);
-fun RemoveProduct(products, productId) = rmall (GetProduct(products, productId)) products;</text>
+fun RemoveProduct(products, productId) = rmall (GetProduct(products, productId)) products;
+fun GetProductsTotalValue[] = 0
+  | GetProductsTotalValue((_,_,_,price,_)::products) = price + GetProductsTotalValue products</text>
       </Aux>
       <Aux id="ID1414322875">
         <posattr x="-714.000000"
-                 y="84.000000"/>
+                 y="61.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -470,15 +477,61 @@ FilterProducts(products,&quot;None&quot;);
 GetQuantityForProduct(products, breadId);
 GetQuantityForProduct(SetProductQuantity(breadId, 300,products), breadId);
 GetProduct(products,breadId);
-RemoveProduct(products,breadId);</text>
+RemoveProduct(products,breadId);
+GetProductsTotalValue(products);</text>
       </Aux>
     </page>
     <page id="ID1414578126">
       <pageattr name="Orders"/>
       <constraints/>
-      <Aux id="ID1414591286">
-        <posattr x="-1008.000000"
-                 y="1166.000000"/>
+      <Aux id="ID1414604757">
+        <posattr x="-1302.000000"
+                 y="275.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>fun GetUserOrders((userId,_,_,_,_), orders) = List.filter (fn((_,id,_,_,_,_)) =&gt; id=userId) orders;
+fun GetOrder(orderId, orders)= List.nth(List.filter (fn((id,_,_,_,_,_)) =&gt; id=orderId) orders,0);
+fun AddProductInUserOrder((id,userId,products,status,deliveryType,total),product,quantity) = (id,userId,ins products product,status,deliveryType,total);
+fun SetOrderDeliveryType((id,userId,products,status,deliveryType,total), orderDeliveryType) = (id,userId,products,status,orderDeliveryType,total);
+fun SetOrderStatus((id,userId,products,status,deliveryType,total), orderStatus) = (id,userId,products,orderStatus,deliveryType,total);
+fun CalculateOrderTotal((id,userId,products,status,deliveryType,total)) = (id,userId,products,status,deliveryType,GetProductsTotalValue(products));
+fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0)
+
+
+
+</text>
+      </Aux>
+      <Aux id="ID1414608854">
+        <posattr x="-1302.000000"
+                 y="138.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>GetUserOrders(client1, orders);
+GetUserOrders(client2, orders);
+GetOrder(client1OrderId,orders);
+AddProductInUserOrder(client1Order,bread,1);
+SetOrderDeliveryType(client1Order,1);
+SetOrderStatus(client1Order,1);
+CalculateOrderTotal(client1Order);
+CreateUserOrder(client1);</text>
+      </Aux>
+      <Aux id="ID1414681668">
+        <posattr x="-1302.000000"
+                 y="940.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -496,7 +549,7 @@ val client1Details = (&quot;client1&quot;,&quot;client1&quot;,&quot;Strada Bucur
 val client2Details = (&quot;client2&quot;,&quot;client2&quot;,&quot;Strada Bucuresti 2&quot;);
 val client1 = (client1Id,&quot;Username&quot;,&quot;password&quot;,client1Type,client1Details);
 val client2 = (client2Id,&quot;client2&quot;,&quot;password&quot;,client2Type,client2Details);
-val users = [client,client2];
+val users = [client1,client2];
 
 val breadId = GenerateId();
 val breadCategory = &quot;Bakery&quot;;
@@ -524,7 +577,7 @@ val products = [bread,sausage,cheese];
 val client1OrderId = GenerateId();
 val client1OrderDeliveryType = 0
 val client1OrderStatus = 0;
-val client1Order = (client1OrderId, client1Id, [bread,cheese], client1OrderStatus, client1OrderDeliveryType,0)
+val client1Order = (client1OrderId, client1Id, [], client1OrderStatus, client1OrderDeliveryType,0)
 
 val client2OrderId = GenerateId();
 val client2OrderDeliveryType = 0;
@@ -533,9 +586,9 @@ val client2Order = (client2OrderId, client2Id, [sausage], client2OrderStatus, cl
 
 val orders = [client1Order, client2Order];</text>
       </Aux>
-      <Aux id="ID1414604757">
-        <posattr x="-1008.000000"
-                 y="485.000000"/>
+      <Aux id="ID1414713777">
+        <posattr x="-1302.000000"
+                 y="-12.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -545,38 +598,14 @@ val orders = [client1Order, client2Order];</text>
         <textattr colour="Black"
                   bold="false"/>
         <label/>
-        <text>fun GetUserOrders(userId, orders) = List.filter (fn((_,id,_,_,_,_)) =&gt; id=userId) orders;
-fun GetOrder(orderId, orders) = List.filter (fn((id,_,_,_,_,_)) =&gt; id=orderId) orders;</text>
-      </Aux>
-      <Aux id="ID1414608854">
-        <posattr x="-1008.000000"
-                 y="420.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <label/>
-        <text>GetUserOrders(client1Id, orders);
-GetUserOrders(client2Id, orders);
-GetOrder(client1OrderId,orders);</text>
-      </Aux>
-      <Aux id="ID1414645538">
-        <posattr x="-978.000000"
-                 y="294.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <label/>
-        <text>fun AddProductInUserOrder(orderId, product, quantity, orders) =</text>
+        <text>val newOrder = CreateUserOrder(client1);
+GetUserOrders(client1, orders);
+SetOrderDeliveryType(newOrder,1);
+SetOrderStatus(newOrder,1);
+val test = AddProductInUserOrder(newOrder,bread,1);
+val test = AddProductInUserOrder(test,bread,1);
+CalculateOrderTotal(test);
+</text>
       </Aux>
     </page>
     <instances>
@@ -614,12 +643,7 @@ GetOrder(client1OrderId,orders);</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10004.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -629,7 +653,12 @@ GetOrder(client1OrderId,orders);</text>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -842,10 +871,10 @@ GetOrder(client1OrderId,orders);</text>
     </options>
     <binders>
       <cpnbinder id="ID1414039604"
-                 x="1221"
-                 y="74"
+                 x="262"
+                 y="45"
                  width="958"
-                 height="902">
+                 height="962">
         <sheets>
           <cpnsheet id="ID1414294528"
                     panx="148.000000"
@@ -875,8 +904,8 @@ GetOrder(client1OrderId,orders);</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1414580739"
-                    panx="468.000000"
-                    pany="505.000000"
+                    panx="963.000000"
+                    pany="-36.000000"
                     zoom="1.000000"
                     instance="ID1414578131">
             <zorder>
@@ -887,13 +916,13 @@ GetOrder(client1OrderId,orders);</text>
         <zorder>
           <position value="1"/>
           <position value="0"/>
-          <position value="3"/>
           <position value="2"/>
+          <position value="3"/>
         </zorder>
       </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="true">
+    <IndexNode expanded="false">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -969,6 +998,7 @@ GetOrder(client1OrderId,orders);</text>
           <IndexNode expanded="true"/>
         </IndexNode>
         <IndexNode expanded="true">
+          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
