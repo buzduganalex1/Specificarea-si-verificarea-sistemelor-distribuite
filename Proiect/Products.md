@@ -44,8 +44,8 @@ fun GetQuantityForProduct(products, productId) = rmall 0 (map (fn (id,_,_,_,quan
 fun FilterProducts (products, category) =  List.filter (fn((_,_,c,_,_)) => c=category) products;
 fun SetProductQuantity (productId, quantity, []) = []
     | SetProductQuantity (productId, quantity, (id,a,b,c,q) :: products) = (if id = productId then (id,a,b,c,quantity) else (id,a,b,c,q)) :: (SetProductQuantity (productId,quantity, products));
-
-fun RemoveProduct(productId;)
+fun GetProduct (products, productId) = List.nth(List.filter (fn((id,_,_,_,_)) => id=productId) products, 0);
+fun RemoveProduct(products, productId) = rmall (GetProduct(products, breadId)) products;
 ```
 
 ## Tests
@@ -58,4 +58,6 @@ FilterProducts(products,"Dairy");
 FilterProducts(products,"None");
 GetQuantityForProduct(products, breadId);
 GetQuantityForProduct(SetProductQuantity(breadId, 300,products), breadId);
+GetProduct(products,breadId);
+RemoveProduct(products,breadId);
 ```
