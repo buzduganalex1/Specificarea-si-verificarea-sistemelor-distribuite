@@ -69,13 +69,21 @@ val orders = [client1Order, client2Order];
 
 ```
 fun GetUserOrders((userId,_,_,_,_), orders) = List.filter (fn((_,id,_,_,_,_)) => id=userId) orders;
+
 fun GetOrder(orderId, orders)= List.nth(List.filter (fn((id,_,_,_,_,_)) => id=orderId) orders,0);
+
 fun AddProductInUserOrder((id,userId,products,status,deliveryType,total),product,quantity) = (id,userId,ins products product,status,deliveryType,total);
+
 fun SetOrderDeliveryType((id,userId,products,status,deliveryType,total), orderDeliveryType) = (id,userId,products,status,orderDeliveryType,total);
+
 fun SetOrderStatus((id,userId,products,status,deliveryType,total), orderStatus) = (id,userId,products,orderStatus,deliveryType,total);
+
 fun CalculateOrderTotal((id,userId,products,status,deliveryType,total)) = (id,userId,products,status,deliveryType,GetProductsTotalValue(products));
+
 fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0);
+
 fun GetFinishedOrders(orders) = List.filter (fn((_,_,_,status,_,_)) => status = 2) orders;
+
 fun GetOrdersTotalValue[] = 0
   | GetOrdersTotalValue((_,_,products,_,_,_)::orders) = GetProductsTotalValue(products) + GetOrdersTotalValue orders;
 ```
