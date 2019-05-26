@@ -74,19 +74,23 @@ fun AddProductInUserOrder((id,userId,products,status,deliveryType,total),product
 fun SetOrderDeliveryType((id,userId,products,status,deliveryType,total), orderDeliveryType) = (id,userId,products,status,orderDeliveryType,total);
 fun SetOrderStatus((id,userId,products,status,deliveryType,total), orderStatus) = (id,userId,products,orderStatus,deliveryType,total);
 fun CalculateOrderTotal((id,userId,products,status,deliveryType,total)) = (id,userId,products,status,deliveryType,GetProductsTotalValue(products));
-fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0)
+fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0);
+fun GetFinishedOrders(orders) = List.filter (fn((_,_,_,status,_,_)) => status = 2) orders;
+fun GetOrdersTotalValue[] = 0
+  | GetOrdersTotalValue((_,_,products,_,_,_)::orders) = GetProductsTotalValue(products) + GetOrdersTotalValue orders;
 ```
 
 ## Tests
 
 ```
-GetUserOrders(client1Id, orders);
-GetUserOrders(client2Id, orders);
+GetUserOrders(client1, orders);
+GetUserOrders(client2, orders);
 GetOrder(client1OrderId,orders);
 AddProductInUserOrder(client1Order,bread,1);
 SetOrderDeliveryType(client1Order,1);
 SetOrderStatus(client1Order,1);
 CalculateOrderTotal(client1Order);
+CreateUserOrder(client1);
 
 //Full integration
 val newOrder = CreateUserOrder(client1);
@@ -96,5 +100,5 @@ SetOrderStatus(newOrder,1);
 val test = AddProductInUserOrder(newOrder,bread,1);
 val test = AddProductInUserOrder(test,bread,1);
 CalculateOrderTotal(test);
-
+GetOrdersTotalValue(GetFinishedOrders(orders));
 ```

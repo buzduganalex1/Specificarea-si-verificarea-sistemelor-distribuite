@@ -305,18 +305,43 @@
           <layout>fun GetProductsTotalValue[] = 0
   | GetProductsTotalValue((_,_,_,price,_)::products) = price + GetProductsTotalValue products;</layout>
         </ml>
+        <ml id="ID1414848738">fun GetUserOrders((userId,_,_,_,_), orders) = List.filter (fn((_,id,_,_,_,_)) =&gt; id=userId) orders;
+          <layout>fun GetUserOrders((userId,_,_,_,_), orders) = List.filter (fn((_,id,_,_,_,_)) =&gt; id=userId) orders;</layout>
+        </ml>
+        <ml id="ID1414850728">fun GetOrder(orderId, orders)= List.nth(List.filter (fn((id,_,_,_,_,_)) =&gt; id=orderId) orders,0);
+          <layout>fun GetOrder(orderId, orders)= List.nth(List.filter (fn((id,_,_,_,_,_)) =&gt; id=orderId) orders,0);</layout>
+        </ml>
+        <ml id="ID1414852730">fun AddProductInUserOrder((id,userId,products,status,deliveryType,total),product,quantity) = (id,userId,ins products product,status,deliveryType,total);
+          <layout>fun AddProductInUserOrder((id,userId,products,status,deliveryType,total),product,quantity) = (id,userId,ins products product,status,deliveryType,total);</layout>
+        </ml>
+        <ml id="ID1414863889">fun SetOrderDeliveryType((id,userId,products,status,deliveryType,total), orderDeliveryType) = (id,userId,products,status,orderDeliveryType,total);
+          <layout>fun SetOrderDeliveryType((id,userId,products,status,deliveryType,total), orderDeliveryType) = (id,userId,products,status,orderDeliveryType,total);</layout>
+        </ml>
+        <ml id="ID1414865968">fun SetOrderStatus((id,userId,products,status,deliveryType,total), orderStatus) = (id,userId,products,orderStatus,deliveryType,total);
+          <layout>fun SetOrderStatus((id,userId,products,status,deliveryType,total), orderStatus) = (id,userId,products,orderStatus,deliveryType,total);</layout>
+        </ml>
+        <ml id="ID1414868059">fun CalculateOrderTotal((id,userId,products,status,deliveryType,total)) = (id,userId,products,status,deliveryType,GetProductsTotalValue(products));
+          <layout>fun CalculateOrderTotal((id,userId,products,status,deliveryType,total)) = (id,userId,products,status,deliveryType,GetProductsTotalValue(products));</layout>
+        </ml>
+        <ml id="ID1414870162">fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0)
+          <layout>fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0)</layout>
+        </ml>
+        <ml id="ID1414930002">fun GetFinishedOrders(orders) = List.filter (fn((_,_,_,status,_,_)) =&gt; status = 2) orders;
+          <layout>fun GetFinishedOrders(orders) = List.filter (fn((_,_,_,status,_,_)) =&gt; status = 2) orders;</layout>
+        </ml>
+        <ml id="ID1414932436">fun GetOrdersTotalValue[] = 0
+  | GetOrdersTotalValue((_,_,products,_,_,_)::orders) = GetProductsTotalValue(products) + GetOrdersTotalValue orders;
+          <layout>fun GetOrdersTotalValue[] = 0
+  | GetOrdersTotalValue((_,_,products,_,_,_)::orders) = GetProductsTotalValue(products) + GetOrdersTotalValue orders;</layout>
+        </ml>
       </block>
     </globbox>
-    <page id="ID6">
-      <pageattr name="Admin"/>
-      <constraints/>
-    </page>
     <page id="ID1414032319">
-      <pageattr name="Delivery"/>
+      <pageattr name="DeliveryTest"/>
       <constraints/>
     </page>
     <page id="ID1414294407">
-      <pageattr name="Users"/>
+      <pageattr name="UsersTest"/>
       <constraints/>
       <Aux id="ID1414294953">
         <posattr x="-546.000000"
@@ -398,11 +423,11 @@ val test = GenerateId();</text>
       </Aux>
     </page>
     <page id="ID1414318467">
-      <pageattr name="Products"/>
+      <pageattr name="ProductsTest"/>
       <constraints/>
       <Aux id="ID1414321233">
         <posattr x="-714.000000"
-                 y="565.000000"/>
+                 y="574.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -482,11 +507,11 @@ GetProductsTotalValue(products);</text>
       </Aux>
     </page>
     <page id="ID1414578126">
-      <pageattr name="Orders"/>
+      <pageattr name="OrdersTest"/>
       <constraints/>
       <Aux id="ID1414604757">
         <posattr x="-1302.000000"
-                 y="275.000000"/>
+                 y="263.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -502,7 +527,10 @@ fun AddProductInUserOrder((id,userId,products,status,deliveryType,total),product
 fun SetOrderDeliveryType((id,userId,products,status,deliveryType,total), orderDeliveryType) = (id,userId,products,status,orderDeliveryType,total);
 fun SetOrderStatus((id,userId,products,status,deliveryType,total), orderStatus) = (id,userId,products,orderStatus,deliveryType,total);
 fun CalculateOrderTotal((id,userId,products,status,deliveryType,total)) = (id,userId,products,status,deliveryType,GetProductsTotalValue(products));
-fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0)
+fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0);
+fun GetFinishedOrders(orders) = List.filter (fn((_,_,_,status,_,_)) =&gt; status = 2) orders;
+fun GetOrdersTotalValue[] = 0
+  | GetOrdersTotalValue((_,_,products,_,_,_)::orders) = GetProductsTotalValue(products) + GetOrdersTotalValue orders;
 
 
 
@@ -510,7 +538,7 @@ fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*str
       </Aux>
       <Aux id="ID1414608854">
         <posattr x="-1302.000000"
-                 y="138.000000"/>
+                 y="71.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -530,8 +558,8 @@ CalculateOrderTotal(client1Order);
 CreateUserOrder(client1);</text>
       </Aux>
       <Aux id="ID1414681668">
-        <posattr x="-1302.000000"
-                 y="940.000000"/>
+        <posattr x="-1279.000000"
+                 y="1158.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -581,14 +609,14 @@ val client1Order = (client1OrderId, client1Id, [], client1OrderStatus, client1Or
 
 val client2OrderId = GenerateId();
 val client2OrderDeliveryType = 0;
-val client2OrderStatus = 0;
-val client2Order = (client2OrderId, client2Id, [sausage], client2OrderStatus, client2OrderDeliveryType,0)
+val client2OrderStatus = 2;
+val client2Order = (client2OrderId, client2Id, [sausage,bread,cheese], client2OrderStatus, client2OrderDeliveryType,0)
 
 val orders = [client1Order, client2Order];</text>
       </Aux>
       <Aux id="ID1414713777">
         <posattr x="-1302.000000"
-                 y="-12.000000"/>
+                 y="-84.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -605,12 +633,15 @@ SetOrderStatus(newOrder,1);
 val test = AddProductInUserOrder(newOrder,bread,1);
 val test = AddProductInUserOrder(test,bread,1);
 CalculateOrderTotal(test);
+GetOrdersTotalValue(GetFinishedOrders(orders));
 </text>
       </Aux>
     </page>
+    <page id="ID1414831466">
+      <pageattr name="Users"/>
+      <constraints/>
+    </page>
     <instances>
-      <instance id="ID2149"
-                page="ID6"/>
       <instance id="ID1414032321"
                 page="ID1414032319"/>
       <instance id="ID1414294409"
@@ -621,6 +652,8 @@ CalculateOrderTotal(test);
                 page="ID1414318467"/>
       <instance id="ID1414578131"
                 page="ID1414578126"/>
+      <instance id="ID1414831468"
+                page="ID1414831466"/>
     </instances>
     <options>
       <option name="realtimestamp">
@@ -871,10 +904,10 @@ CalculateOrderTotal(test);
     </options>
     <binders>
       <cpnbinder id="ID1414039604"
-                 x="262"
-                 y="45"
-                 width="958"
-                 height="962">
+                 x="688"
+                 y="21"
+                 width="1160"
+                 height="960">
         <sheets>
           <cpnsheet id="ID1414294528"
                     panx="148.000000"
@@ -895,8 +928,8 @@ CalculateOrderTotal(test);
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1414319242"
-                    panx="312.000000"
-                    pany="145.000000"
+                    panx="235.000000"
+                    pany="490.000000"
                     zoom="1.000000"
                     instance="ID1414318469">
             <zorder>
@@ -904,10 +937,19 @@ CalculateOrderTotal(test);
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1414580739"
-                    panx="963.000000"
-                    pany="-36.000000"
+                    panx="851.000000"
+                    pany="709.000000"
                     zoom="1.000000"
                     instance="ID1414578131">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1414838060"
+                    panx="-1118.000000"
+                    pany="-89.000000"
+                    zoom="1.000000"
+                    instance="ID1414831468">
             <zorder>
               <position value="0"/>
             </zorder>
@@ -915,14 +957,15 @@ CalculateOrderTotal(test);
         </sheets>
         <zorder>
           <position value="1"/>
-          <position value="0"/>
-          <position value="2"/>
           <position value="3"/>
+          <position value="2"/>
+          <position value="0"/>
+          <position value="4"/>
         </zorder>
       </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="false">
+    <IndexNode expanded="true">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -991,13 +1034,22 @@ CalculateOrderTotal(test);
       <IndexNode expanded="false">
         <IndexNode expanded="false"/>
       </IndexNode>
-      <IndexNode expanded="true">
+      <IndexNode expanded="false">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
         </IndexNode>
         <IndexNode expanded="true">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
