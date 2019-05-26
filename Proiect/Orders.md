@@ -4,7 +4,7 @@
 
 ```
 // DeliveryType
-// 0 - Free
+// 0 - NotSet
 // 1 - Pay at delivery
 // 2 - Pay online
 
@@ -68,17 +68,13 @@ val orders = [client1Order, client2Order];
 ## Functions
 
 ```
-fun GetUserOrders(userId, orders) = List.filter (fn((_,id,_,_,_,_)) => id=userId) orders;
+fun GetUserOrders((userId,_,_,_,_), orders) = List.filter (fn((_,id,_,_,_,_)) => id=userId) orders;
 fun GetOrder(orderId, orders)= List.nth(List.filter (fn((id,_,_,_,_,_)) => id=orderId) orders,0);
 fun AddProductInUserOrder((id,userId,products,status,deliveryType,total),product,quantity) = (id,userId,ins products product,status,deliveryType,total);
 fun SetOrderDeliveryType((id,userId,products,status,deliveryType,total), orderDeliveryType) = (id,userId,products,status,orderDeliveryType,total);
 fun SetOrderStatus((id,userId,products,status,deliveryType,total), orderStatus) = (id,userId,products,orderStatus,deliveryType,total);
 fun CalculateOrderTotal((id,userId,products,status,deliveryType,total)) = (id,userId,products,status,deliveryType,GetProductsTotalValue(products));
-
-
-fun CreateUserOrder(UserId) -> orderId;
-
-fun GetOrdersTotal();
+fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0)
 ```
 
 ## Tests
@@ -91,4 +87,14 @@ AddProductInUserOrder(client1Order,bread,1);
 SetOrderDeliveryType(client1Order,1);
 SetOrderStatus(client1Order,1);
 CalculateOrderTotal(client1Order);
+
+//Full integration
+val newOrder = CreateUserOrder(client1);
+GetUserOrders(client1, orders);
+SetOrderDeliveryType(newOrder,1);
+SetOrderStatus(newOrder,1);
+val test = AddProductInUserOrder(newOrder,bread,1);
+val test = AddProductInUserOrder(test,bread,1);
+CalculateOrderTotal(test);
+
 ```
