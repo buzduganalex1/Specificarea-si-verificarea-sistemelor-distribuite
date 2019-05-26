@@ -45,7 +45,9 @@ fun FilterProducts (products, category) =  List.filter (fn((_,_,c,_,_)) => c=cat
 fun SetProductQuantity (productId, quantity, []) = []
     | SetProductQuantity (productId, quantity, (id,a,b,c,q) :: products) = (if id = productId then (id,a,b,c,quantity) else (id,a,b,c,q)) :: (SetProductQuantity (productId,quantity, products));
 fun GetProduct (products, productId) = List.nth(List.filter (fn((id,_,_,_,_)) => id=productId) products, 0);
-fun RemoveProduct(products, productId) = rmall (GetProduct(products, breadId)) products;
+fun RemoveProduct(products, productId) = rmall (GetProduct(products, productId)) products;
+fun GetProductsTotalValue[] = 0
+  | GetProductsTotalValue((_,_,_,price,_)::products) = price + GetProductsTotalValue products
 ```
 
 ## Tests
@@ -60,4 +62,5 @@ GetQuantityForProduct(products, breadId);
 GetQuantityForProduct(SetProductQuantity(breadId, 300,products), breadId);
 GetProduct(products,breadId);
 RemoveProduct(products,breadId);
+GetProductsTotalValue(products);
 ```

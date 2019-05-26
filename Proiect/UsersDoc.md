@@ -3,6 +3,10 @@
 ## DataType
 
 ```
+// UserType
+// 0 Admin
+// 1 Client
+
 colset User = product Id*Username*Password*UserType*UserDetails;
 colset UserDetails = product Name*Surname*DeliveryAdress;
 ```
