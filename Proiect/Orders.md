@@ -12,6 +12,7 @@
 // 0 - Started
 // 1 - InProgress -- not delivered
 // 2 - Finished -- delivered
+// 3 - Rejected 
 
 colset Order = product Id*UserId*Products*Status*DeliveryType*Total;
 ```
@@ -81,6 +82,8 @@ fun SetOrderStatus((id,userId,products,status,deliveryType,total), orderStatus) 
 fun CalculateOrderTotal((id,userId,products,status,deliveryType,total)) = (id,userId,products,status,deliveryType,GetProductsTotalValue(products));
 
 fun CreateUserOrder((client1Id,_,_,_,_)) = (GenerateId(), client1Id, []:(int*string*string*int*int) list, 0, 0,0);
+
+fun AddUserOrderToList(order,orders) = ins orders order;
 
 fun GetFinishedOrders(orders) = List.filter (fn((_,_,_,status,_,_)) => status = 2) orders;
 
