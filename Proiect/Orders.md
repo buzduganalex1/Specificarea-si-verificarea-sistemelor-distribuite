@@ -56,14 +56,19 @@ val products = [bread,sausage,cheese];
 val client1OrderId = GenerateId();
 val client1OrderDeliveryType = 0
 val client1OrderStatus = 0;
-val client1Order = (client1OrderId, client1Id, [bread,cheese], client1OrderStatus, client1OrderDeliveryType,0)
+val client1Order = (client1OrderId, client1Id, [], client1OrderStatus, client1OrderDeliveryType,0)
 
 val client2OrderId = GenerateId();
 val client2OrderDeliveryType = 0;
-val client2OrderStatus = 0;
-val client2Order = (client2OrderId, client2Id, [sausage], client2OrderStatus, client2OrderDeliveryType,0)
+val client2OrderStatus = 2;
+val client2Order = (client2OrderId, client2Id, [sausage,bread,cheese], client2OrderStatus, client2OrderDeliveryType,0)
 
 val orders = [client1Order, client2Order];
+val startingOrderStaus = 0;
+val pendingOrderStatus = 1;
+val finishedOrderStatus = 2;
+val rejectedOrderStatus = 3;
+val waitingForApproval = 4;
 ```
 
 ## Functions

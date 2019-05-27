@@ -4006,7 +4006,7 @@ val orders = [client1Order, client2Order];</text>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1416429012">
-          <posattr x="-932.000000"
+          <posattr x="-993.500000"
                    y="-109.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4017,7 +4017,7 @@ val orders = [client1Order, client2Order];</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">[IsAdmin(user)=true]</text>
         </cond>
         <time id="ID1416429013">
           <posattr x="-848.500000"
@@ -4080,7 +4080,7 @@ val orders = [client1Order, client2Order];</text>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1416451584">
-          <posattr x="-935.000000"
+          <posattr x="-996.500000"
                    y="-347.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4091,7 +4091,7 @@ val orders = [client1Order, client2Order];</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">[IsAdmin(user)=true]</text>
         </cond>
         <time id="ID1416451585">
           <posattr x="-851.500000"
@@ -5481,10 +5481,74 @@ val orders = [client1Order, client2Order];</text>
                 version="4.0.1">order</text>
         </annot>
       </arc>
+      <arc id="ID1416722441"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1416451583"/>
+        <placeend idref="ID1415946309"/>
+        <annot id="ID1416722442">
+          <posattr x="-653.000000"
+                   y="-569.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">user</text>
+        </annot>
+      </arc>
+      <arc id="ID1416726781"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1416429011"/>
+        <placeend idref="ID1415946309"/>
+        <annot id="ID1416726782">
+          <posattr x="-650.000000"
+                   y="-452.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">user</text>
+        </annot>
+      </arc>
       <constraints/>
       <Aux id="ID1415941335">
-        <posattr x="-481.000000"
-                 y="729.000000"/>
+        <posattr x="-1233.000000"
+                 y="672.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -5495,7 +5559,7 @@ val orders = [client1Order, client2Order];</text>
                   bold="false"/>
         <label/>
         <text>val client1Type = 1;
-val client2Type = 1;
+val client2Type = 0;
 val client1Id = GenerateId();
 val client2Id = GenerateId();
 val client1Details = (&quot;client1&quot;,&quot;client1&quot;,&quot;Strada Bucuresti&quot;);
@@ -5836,9 +5900,9 @@ val waitingForApproval = 4;</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1415941654"
-                    panx="-2528.588271"
-                    pany="-554.024742"
-                    zoom="1.007080"
+                    panx="299.170789"
+                    pany="-513.251825"
+                    zoom="0.805664"
                     instance="ID1415941336">
             <zorder>
               <position value="0"/>
@@ -5856,8 +5920,8 @@ val waitingForApproval = 4;</text>
         </sheets>
         <zorder>
           <position value="3"/>
-          <position value="0"/>
           <position value="1"/>
+          <position value="0"/>
           <position value="2"/>
         </zorder>
       </cpnbinder>
